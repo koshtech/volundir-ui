@@ -1,9 +1,0 @@
-.list-numbered {
-  list-style: decimal;
-  padding-left: 2rem;
-  margin-top: 1rem;
-}
-
-.list-ordered {
-  list-style: upper-roman;
-}
