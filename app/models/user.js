@@ -1,6 +1,6 @@
-import { BaseModel } from '/lib/volundir/core/base_model.js';
+import { Application } from './application.js';
 
-export class User extends BaseModel {
+export class User extends Application {
   static get resourceName() {
     return 'users';
   }

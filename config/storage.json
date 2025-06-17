@@ -1,0 +1,13 @@
+{
+  "default": "my_rest_api",
+  "my_rest_api": {
+    "type": "restful",
+    "url": "http://localhost:3030/fake_api",
+    "headers": {
+      "content-type": "application/json",
+      "accept": "application/json",
+      "authorization": "Bearer <token_jwt>"
+    }
+  }
+}
+

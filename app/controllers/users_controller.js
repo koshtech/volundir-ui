@@ -8,11 +8,18 @@ export async function index(html) {
     ...getAuthHeaders(), 'Content-Type': 'application/json'
   };
 
-  const data = {};
+  var data = {};
 
+  var user = await User.find(1);
 
-  const users = await User.find(1);
+  console.log('User found: ', user);
 
+  data = {
+      user: user,
+      appVersion: '1.0.0'
+  };
+
+  console.log('returned data: ', data);
 
   return data;
 }

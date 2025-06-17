@@ -18,5 +18,7 @@ export function index(html) {
       appVersion: '1.0.0'
   };
 
+  console.log('returned data: ', data);
+
   return data;
 }
