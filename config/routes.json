@@ -1,0 +1,11 @@
+{
+  "/": {
+    "site": ["index"]
+  },
+  "/sessions": {
+    "sessions": ["login", "register", "forgot", "logout"],
+  },
+  "/users": {
+    "users": "resources"
+  }
+}
