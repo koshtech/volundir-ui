@@ -1,11 +1,14 @@
 {
-  "/": {
-    "site": ["index"]
-  },
-  "/sessions": {
-    "sessions": ["login", "register", "forgot", "logout"],
-  },
-  "/users": {
-    "users": "resources"
-  }
+  "/":         "site/index",
+  "/site":     "site/index",
+  "/login":    "sessions/login",
+  "/register": "sessions/register",
+  "/forgot":   "sessions/forgot",
+  "/logout":   "sessions/logout",
+  "/login":    "sessions/login",
+
+  "/system-user/:id": "sessions/show/:id",
+
+  "/sessions": "users/resources",
+  "/users":    "users/resources"
 }
