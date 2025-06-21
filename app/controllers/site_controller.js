@@ -1,14 +1,6 @@
 export class Site {
   static index() {
-
     console.log("Método index do SiteController");
-    // console.log('received: ', html);
-
-    // user = User.find(1)
-
-    // const data {
-    //   user: user
-    // }
 
     const data = {
         user: {

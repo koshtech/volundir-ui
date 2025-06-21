@@ -11,12 +11,18 @@ export class Users {
 
     var data = {};
 
-    var user = await User.find(1);
-
+    var user  = await User.find(1);
     console.log('User found: ', user);
+
+    var users = await User.all();
+    console.log('total: ', users.total()); // 10
+    console.log('first: ', users.first()); // primeiro User
+    console.log('last: ', users.last());  // último User
 
     data = {
         user: user,
+        users: users,
+        total: users.total(),
         appVersion: '1.0.0'
     };
 
