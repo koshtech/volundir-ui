@@ -4,6 +4,28 @@
 
 <div id="users-index"></div>
 
-<p>First user: {{user.name}}</p>
+<p>Single user ID 2: {{user.id}} - {{user.name}} </p>
+<p>First user ID 1: {{first.id}} - {{first.name}}</p>
+<p>Last user ID 3: {{last.id}} - {{last.name}}</p>
 <p>Total users: {{total}}</p>
+
+<!-- /app/views/users/index.html -->
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+    </tr>
+  </thead>
+  <tbody id="user-rows">
+    {{each user in users}}
+    <tr>
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+
+
 <p>Location on server: /volundir-ui/app/views/users/index.html</p>
