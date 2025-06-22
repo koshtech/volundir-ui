@@ -10,11 +10,13 @@
 <p>Total users: {{total}}</p>
 
 <!-- /app/views/users/index.html -->
-<table>
+<table border="1">
   <thead>
     <tr>
       <th>ID</th>
       <th>Nome</th>
+      <th>Profile</th>
+      <th>Admin?</th>
     </tr>
   </thead>
   <tbody id="user-rows">
@@ -22,6 +24,8 @@
     <tr>
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
+      <td>{{user.profile}}</td>
+      <td>{{if user.profile == 'admin'}}Yes{{endif}}</td>
     </tr>
     {{end}}
   </tbody>
