@@ -1,0 +1,5 @@
+<div class="form-group">
+  <label for="{{field.name}}">{{field.name | capitalize}}</label>
+  <input type="file" id="{{field.name}}" name="{{field.name}}{{if field.multiple}}[]{{endif}}" class="{{field.class}}"
+         {{if field.multiple}}multiple{{endif}} {{if field.disabled}}disabled{{endif}}>
+</div>

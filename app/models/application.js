@@ -1,7 +1,7 @@
 import { BaseModel } from '/lib/volundir/core/base_model.js';
 
 export class Application extends BaseModel {
-  static get resourceName() {
+  static get Auto() {
     return 'users';
   }
 }

@@ -1,6 +1,7 @@
 {
   "/":         "site/index",
   "/site":     "site/index",
+
   "/login":    "sessions/login",
   "/register": "sessions/register",
   "/forgot":   "sessions/forgot",

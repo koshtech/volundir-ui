@@ -1,0 +1,13 @@
+{{each option in field.options}}
+  <div class="form-check">
+    <input type="radio"
+           id="{{field.name}}_{{option.value}}"
+           name="{{field.name}}"
+           value="{{option.value}}"
+           class="{{field.class}}"
+           {{if option.value == field.value}}checked{{endif}}>
+    <label class="form-check-label" for="{{field.name}}_{{option.value}}">
+      {{option.label}}
+    </label>
+  </div>
+{{end}}

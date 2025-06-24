@@ -1,4 +1,6 @@
 {
-  "my_key": "my value"
+  "application_name": "Volundir SPA Demo",
+  "interface": "bootstrap-5.3.0",
+  "storage": "json"
 }
 

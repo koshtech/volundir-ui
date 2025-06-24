@@ -40,7 +40,19 @@ export class Users {
   static new(html) {
     console.log("Método new do UsersController");
 
-    var data = {};
+    var data = {
+      user: {
+        "terms": "true",
+        "birthdate": "1973-02-09",
+        "documents": "",
+        "email": "teste@tst.com",
+        "age": "23",
+        "password": "",
+        "user_type": "guest",
+        "bio": "my bio is here",
+        "country": "US",
+      }
+    };
     return data;
   }
 }

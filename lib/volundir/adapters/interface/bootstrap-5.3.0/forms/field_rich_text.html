@@ -1,0 +1,5 @@
+<div class="form-group">
+  <label for="{{field.name}}">{{field.name | capitalize}}</label>
+  <textarea id="{{field.name}}" name="{{field.name}}" class="form-control rich-text"
+            {{if field.disabled}}disabled{{endif}}>{{field.value}}</textarea>
+</div>

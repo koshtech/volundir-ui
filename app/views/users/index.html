@@ -25,7 +25,15 @@
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
       <td>{{user.profile}}</td>
-      <td>{{if user.profile == 'admin'}}Yes{{endif}}</td>
+      <td>
+        {{if user.profile == 'admin'}}
+          <strong>Admin</strong>
+        {{elseif user.profile == 'member'}}
+          <strong>Member</strong>
+        {{else}}
+          <em>User</em>
+        {{endif}}
+      </td>
     </tr>
     {{end}}
   </tbody>

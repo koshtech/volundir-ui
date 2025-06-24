@@ -1,8 +1,17 @@
 {
-  "default": "my_rest_api",
+  "default": "my_json_api",
+  "my_json_api": {
+    "type": "json",
+    "url": "http://localhost:3030/fake_api",
+    "headers": {
+      "content-type": "application/json",
+      "accept": "application/json",
+      "authorization": "Bearer <token_jwt>"
+    }
+  },
   "my_rest_api": {
     "type": "restful",
-    "url": "http://localhost:3030/fake_api",
+    "url": "http://localhost:3030/fake_rest_api",
     "headers": {
       "content-type": "application/json",
       "accept": "application/json",

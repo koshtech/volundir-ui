@@ -1,10 +1,23 @@
 <h2>Cadastro</h2>
-<form id="registerForm">
-  <input name="email" class="form-control mb-2" placeholder="Email" />
-  <input name="password" type="password" class="form-control mb-2" placeholder="Senha" />
-  <input name="password_confirmation" type="password" class="form-control mb-2" placeholder="Confirmar senha" />
-  <button class="btn btn-success">Cadastrar</button>
-  <a class="btn btn-default" href="/">Cancelar</a>
-</form>
 
-<p>Location on server: /volundir-ui/app/views/sessions/register.html</p>
+{{form 'form_default'}}
+  {{field "terms" type="checkbox" class="form-check-input"}}
+  {{field "birthdate" type="date" label="Data de Nascimento" class="form-control"}}
+  {{field "email" type="email" class="form-control" placeholder="Email"}}
+  {{field "documents" type="file" label="Documentos" class="form-control" multiple=true}}
+  {{field "age" type="number" class="form-control" placeholder="Senha"}}
+  {{field "password" type="password" class="form-control" placeholder="Senha"}}
+  {{field "user_type" type="radio" class="form-check-input" options='[
+    {"value":"admin", "label":"Administrador"},
+    {"value":"client", "label":"Cliente"},
+    {"value":"guest", "label":"Visitante"}
+  ]'}}
+  {{field "bio" type="rich_text" class="form-control"}}
+  {{field "country" type="select" class="form-control" options='[{"value":"BR","label":"Brasil"},{"value":"AR","label":"Argentina"},{"value":"US","label":"Estados Unidos"}]'}}
+  {{button type='submit' value='Cadastrar' class="btn btn-success"}}
+  {{link_to href='/' value='Cancelar' class="btn btn-link"}}
+{{end_form}}
+
+<p><a href="/">Home</a></p>
+
+<p>Location on server: /volundir-ui/app/views/users/new.html</p>
