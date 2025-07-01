@@ -7,11 +7,7 @@
   {{field "documents" type="file" label="Documentos" class="form-control" multiple=true}}
   {{field "age" type="number" class="form-control" placeholder="Senha"}}
   {{field "password" type="password" class="form-control" placeholder="Senha"}}
-  {{field "user_type" type="radio" class="form-check-input" options='[
-    {"value":"admin", "label":"Administrador"},
-    {"value":"client", "label":"Cliente"},
-    {"value":"guest", "label":"Visitante"}
-  ]'}}
+  {{field "user_type" type="radio" class="form-check-input" options="user_type_options"}}
   {{field "bio" type="rich_text" class="form-control"}}
   {{field "country" type="select" class="form-control" options='[{"value":"BR","label":"Brasil"},{"value":"AR","label":"Argentina"},{"value":"US","label":"Estados Unidos"}]'}}
   {{button type='submit' value='Cadastrar' class="btn btn-success"}}

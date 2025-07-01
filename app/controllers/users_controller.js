@@ -51,7 +51,12 @@ export class Users {
         "user_type": "guest",
         "bio": "my bio is here",
         "country": "US",
-      }
+      },
+      "user_type_options": [
+        { "value": "admin", "label": "Administrador" },
+        { "value": "client", "label": "Cliente" },
+        { "value": "guest", "label": "Visitante" }
+      ]
     };
     return data;
   }
