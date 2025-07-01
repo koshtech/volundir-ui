@@ -1,17 +1,19 @@
 <h2>Cadastro</h2>
 
-{{form 'form_default'}}
+{{form "form_default" action="users_path" method="post" class="form-horizontal" enctype="multipart/form-data"}}
+  {{field "_method" type="hidden" value="_POST"}}
+  {{field "name" type="text" class="form-control" placeholder="Your name"}}
   {{field "terms" type="checkbox" class="form-check-input"}}
   {{field "birthdate" type="date" label="Data de Nascimento" class="form-control"}}
   {{field "email" type="email" class="form-control" placeholder="Email"}}
   {{field "documents" type="file" label="Documentos" class="form-control" multiple=true}}
   {{field "age" type="number" class="form-control" placeholder="Senha"}}
   {{field "password" type="password" class="form-control" placeholder="Senha"}}
-  {{field "user_type" type="radio" class="form-check-input" options="user_type_options"}}
-  {{field "bio" type="rich_text" class="form-control"}}
+  {{field "profile" type="radio" class="form-check-input" options="profile_options"}}
   {{field "country" type="select" class="form-control" options='[{"value":"BR","label":"Brasil"},{"value":"AR","label":"Argentina"},{"value":"US","label":"Estados Unidos"}]'}}
-  {{button type='submit' value='Cadastrar' class="btn btn-success"}}
-  {{link_to href='/' value='Cancelar' class="btn btn-link"}}
+  {{field "bio" type="text_area" class="form-control"}}
+  {{button type="submit" value="Cadastrar" class="btn btn-success"}}
+  {{link_to href="/" value="Cancelar" class="btn btn-link"}}
 {{end_form}}
 
 <p><a href="/">Home</a></p>

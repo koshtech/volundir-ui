@@ -1,4 +1,4 @@
-<h1>Users</h1>
+<h1>Users index</h1>
 
 <p><a href="/users/new" >New</a> |<a href="/" >Back</a></p>
 
@@ -17,6 +17,7 @@
       <th>Nome</th>
       <th>Profile</th>
       <th>Admin?</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody id="user-rows">
@@ -34,10 +35,13 @@
           <em>User</em>
         {{endif}}
       </td>
+      <td>
+        <a href="/users/{{user.id}}/edit">Edit</a>
+      </td>
     </tr>
     {{end}}
   </tbody>
 </table>
 
 
-<p>Location on server: /volundir-ui/app/views/users/index.html</p>
+<p>Location on server: /app/views/users/index.html</p>
