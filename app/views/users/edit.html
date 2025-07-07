@@ -1,7 +1,7 @@
 <h2>Edit User {{user.name}}</h2>
 
-{{form "form_default" action="update_users_path" id="user.id" method="put" class="form-horizontal" enctype="multipart/form-data"}}
-  {{field "_method" type="hidden" value="_PUT"}}
+{{form "form_default" action="update_users_path" id="user.id" method="post" class="form-horizontal" enctype="multipart/form-data"}}
+  {{field "_method" type="hidden" value="put"}}
   {{field "name" type="text" class="form-control" placeholder="Your name"}}
   {{field "terms" type="checkbox" class="form-check-input"}}
   {{field "birthdate" type="date" label="Data de Nascimento" class="form-control"}}

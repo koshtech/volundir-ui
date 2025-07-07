@@ -1,7 +1,7 @@
 <h2>Cadastro</h2>
 
 {{form "form_default" action="users_path" method="post" class="form-horizontal" enctype="multipart/form-data"}}
-  {{field "_method" type="hidden" value="_POST"}}
+  {{field "_method" type="hidden" value="post"}}
   {{field "name" type="text" class="form-control" placeholder="Your name"}}
   {{field "terms" type="checkbox" class="form-check-input"}}
   {{field "birthdate" type="date" label="Data de Nascimento" class="form-control"}}

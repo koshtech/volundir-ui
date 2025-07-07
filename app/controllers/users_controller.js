@@ -46,17 +46,7 @@ export class Users extends Application {
     console.log("Método new do UsersController");
 
     var data = {
-      user: {
-        "terms": "true",
-        "birthdate": "1973-02-09",
-        "documents": "",
-        "email": "teste@tst.com",
-        "age": "23",
-        "password": "",
-        "profile": "guest",
-        "bio": "my bio is here",
-        "country": "US",
-      },
+      user: {},
       "profile_options": [
         { "value": "admin", "label": "Administrator" },
         { "value": "member", "label": "Member" },
@@ -84,7 +74,7 @@ export class Users extends Application {
 
     console.log('app: ', app);
 
-    System.flash('Usuário criado com sucesso.', 'success');
+    System.flash('user created successfully.', 'success');
     System.navigate('/users');
   }
 
@@ -96,19 +86,44 @@ export class Users extends Application {
 
     var data = {
       user: user,
+      "profile_options": [
+        { "value": "admin", "label": "Administrator" },
+        { "value": "member", "label": "Member" },
+        { "value": "customer", "label": "Customer" },
+        { "value": "user", "label": "User" },
+        { "value": "guest", "label": "Gest" }
+      ],
       appVersion: '1.0.0'
     };
 
     console.log('returned data: ', data);
 
     return data;
+  }
 
-    // if (!formData) {
-    //   console.warn("No formData received.");
-    //   return;
-    // }
+  static async update(id, formData) {
+    console.log("UsersController#update id:", id);
+    console.log("UsersController#update formData:", formData);
 
-    // const values = Object.fromEntries(formData.entries());
-    // console.log("Create user:", values);
+    if (!formData) {
+      console.warn("No formData received.");
+      return;
+    }
+
+    const values = Object.fromEntries(formData.entries());
+    console.log("Update values:", values);
+
+    let user = await User.find(id);
+
+    if (!user) {
+      console.error("User not found.");
+      return;
+    }
+
+    Object.assign(user, values);
+    await user.save();
+
+    System.flash('user updated successfully.', 'success');
+    System.navigate('/users');
   }
 }
