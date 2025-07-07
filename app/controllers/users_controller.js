@@ -126,4 +126,20 @@ export class Users extends Application {
     System.flash('user updated successfully.', 'success');
     System.navigate('/users');
   }
+
+  static async destroy(id) {
+    console.log("UsersController#destroy:", id);
+
+    let user = await User.find(id);
+
+    if (!user) {
+      console.error("User not found.");
+      return;
+    }
+
+    await user.destroy();
+
+    System.flash('user deleted successfully.', 'success');
+    System.navigate('/users');
+  }
 }

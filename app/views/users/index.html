@@ -36,7 +36,8 @@
         {{endif}}
       </td>
       <td>
-        <a href="/users/{{user.id}}/edit">Edit</a>
+        <a href="/users/{{user.id}}/edit">Edit</a> |
+        <a data-confirm="Are you sure?" data-method="delete" href="/users/{{user.id}}" rel="nofollow">Delete</a>
       </td>
     </tr>
     {{end}}
