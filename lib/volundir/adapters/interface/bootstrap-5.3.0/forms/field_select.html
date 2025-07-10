@@ -1,6 +1,6 @@
 <div class="form-group">
   <label for="{{field.name}}">{{field.name | capitalize}}</label>
-  <select id="{{field.name}}" name="{{field.name}}" class="form-control" {{if disabled}}disabled{{endif}}>
+  <select id="{{field.name}}" name="{{field.name}}" class="form-control" {{{field.data_attrs}}} {{if disabled}}disabled{{endif}}>
     {{each option in field.options}}
       <option value="{{option.value}}" {{if option.value == field.value}}selected{{endif}}>
         {{option.label}}

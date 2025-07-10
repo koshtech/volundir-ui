@@ -6,7 +6,7 @@ import { Application } from '/app/controllers/application_controller.js';
 
 export class Users extends Application {
   static async index() {
-    console.log("Método index do UsersController");
+    // console.log("Método index do UsersController");
 
     // this.flash();
 
@@ -17,16 +17,16 @@ export class Users extends Application {
     var data = {};
 
     var user  = await User.find(2);
-    console.log('User found: ', user);
+    // console.log('User found: ', user);
 
     var users = await User.all();
-    console.log('total: ', users.total());
+    // console.log('total: ', users.total());
 
     var first = users.first();
-    console.log('first: ', first);
+    // console.log('first: ', first);
 
     var last = users.last();
-    console.log('last: ', );
+    // console.log('last: ', );
 
     data = {
         user: user,
@@ -37,13 +37,13 @@ export class Users extends Application {
         appVersion: '1.0.0'
     };
 
-    console.log('returned data: ', data);
+    // console.log('returned data: ', data);
 
     return data;
   }
 
   static new(html) {
-    console.log("Método new do UsersController");
+    // console.log("Método new do UsersController");
 
     var data = {
       user: {},
@@ -59,30 +59,30 @@ export class Users extends Application {
   }
 
   static async create(formData) {
-    console.log("UsersController#create");
+    // console.log("UsersController#create");
 
     if (!formData) {
-      console.warn("No formData received.");
+      // console.warn("No formData received.");
       return;
     }
 
     const values = Object.fromEntries(formData.entries());
-    console.log("Create user:", values);
+    // console.log("Create user:", values);
 
     let user = new User(values);
     await user.save();
 
-    console.log('app: ', app);
+    // console.log('app: ', app);
 
     System.flash('user created successfully.', 'success');
     System.navigate('/users');
   }
 
   static async edit(id) {
-    console.log("UsersController#edit:", id);
+    // console.log("UsersController#edit:", id);
 
     var user  = await User.find(id);
-    console.log('User found: ', user);
+    // console.log('User found: ', user);
 
     var data = {
       user: user,
@@ -96,27 +96,27 @@ export class Users extends Application {
       appVersion: '1.0.0'
     };
 
-    console.log('returned data: ', data);
+    // console.log('returned data: ', data);
 
     return data;
   }
 
   static async update(id, formData) {
-    console.log("UsersController#update id:", id);
-    console.log("UsersController#update formData:", formData);
+    // console.log("UsersController#update id:", id);
+    // console.log("UsersController#update formData:", formData);
 
     if (!formData) {
-      console.warn("No formData received.");
+      // console.warn("No formData received.");
       return;
     }
 
     const values = Object.fromEntries(formData.entries());
-    console.log("Update values:", values);
+    // console.log("Update values:", values);
 
     let user = await User.find(id);
 
     if (!user) {
-      console.error("User not found.");
+      // console.error("User not found.");
       return;
     }
 
@@ -128,12 +128,12 @@ export class Users extends Application {
   }
 
   static async destroy(id) {
-    console.log("UsersController#destroy:", id);
+    // console.log("UsersController#destroy:", id);
 
     let user = await User.find(id);
 
     if (!user) {
-      console.error("User not found.");
+      // console.error("User not found.");
       return;
     }
 

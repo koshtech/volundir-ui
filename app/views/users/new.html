@@ -9,8 +9,22 @@
   {{field "documents" type="file" label="Documentos" class="form-control" multiple=true}}
   {{field "age" type="number" class="form-control" placeholder="Senha"}}
   {{field "password" type="password" class="form-control" placeholder="Senha"}}
-  {{field "profile" type="radio" class="form-check-input" options="profile_options"}}
-  {{field "country" type="select" class="form-control" options='[{"value":"BR","label":"Brasil"},{"value":"AR","label":"Argentina"},{"value":"US","label":"Estados Unidos"}]'}}
+  {{field "profile" type="select" class="form-check-input" options="profile_options"
+    data-on-change="populate"
+
+    data-model="country"
+    data-model-id="value"
+    data-model-params="active=1"
+
+    data-target="country"
+    data-target-value="id"
+    data-target-text="name"
+
+    data-helper="my_helper_func"
+    data-helper-param="my_var=my_value"
+  }}
+
+  {{field "country" type="select" class="form-control"}}
   {{field "bio" type="text_area" class="form-control"}}
   {{button type="submit" value="Cadastrar" class="btn btn-success"}}
   {{link_to href="/" value="Cancelar" class="btn btn-link"}}
