@@ -1,6 +1,14 @@
 {
   "application_name": "Volundir SPA Demo",
   "interface": "bootstrap-5.3.0",
-  "storage": "json"
+  "storage": "json",
+  "logger": {
+    "core": "debugger",
+    "controllers": "debugger",
+    "models": "debugger",
+    "views": "debugger",
+    "integrations": "debugger",
+    "interface": "debugger",
+    "storage": "debugger"
+  }
 }
-
