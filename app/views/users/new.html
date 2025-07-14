@@ -11,19 +11,15 @@
   {{field "password" type="password" class="form-control" placeholder="Senha"}}
   {{field "profile" type="select" class="form-check-input" options="profile_options"
     data-on-change="populate"
-
     data-model="country"
     data-model-id="value"
     data-model-params="active=1"
-
     data-target="country"
     data-target-value="id"
     data-target-text="name"
-
     data-helper="my_helper_func"
     data-helper-param="my_var=my_value"
   }}
-
   {{field "country" type="select" class="form-control"}}
   {{field "bio" type="text_area" class="form-control"}}
   {{button type="submit" value="Cadastrar" class="btn btn-success"}}

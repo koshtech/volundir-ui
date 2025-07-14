@@ -26,9 +26,12 @@ export class Users extends Application {
     return data;
   }
 
-  static new(html) {
-    var data = {
-      user: {},
+  static new(data={}) {
+    console.log('==>> new# data: ', data);
+    let user = data['user'] ? data['user'] : {}
+
+    data = {
+      user: this.secure_params(user),
       profile_options: this.profile_options()
     };
 
@@ -36,6 +39,8 @@ export class Users extends Application {
   }
 
   static async create(formData) {
+    console.log('=====>>> create formData:', formData);
+
     if (!formData) {
       return;
     }
@@ -44,10 +49,29 @@ export class Users extends Application {
 
     let user = new User(values);
 
-    await user.save();
+    try {
+      if (user.isValid()) {
+        await user.save();
 
-    System.flash('user created successfully.', 'success');
-    System.navigate('/users');
+        System.flash('User created successfully.', 'success');
+        System.navigate('/users');
+      }
+      else {
+        console.error("Validation errors:", user.errors);
+      }
+    } catch (error) {
+      console.error("Error saving:", error);
+      System.flash(`User create error: ${error}.`, 'alert');
+      // System.navigate('/users');
+    }
+
+    var data = {
+      errors: user.errors,
+      user: user,
+      profile_options: this.profile_options()
+    };
+
+    return data;
   }
 
   static async edit(id) {
@@ -106,5 +130,20 @@ export class Users extends Application {
       { "value": "user", "label": "User" },
       { "value": "guest", "label": "Gest" }
     ];
+  }
+
+  static secure_params(user) {
+    return {
+      name: user["name"],
+      terms: user["terms"],
+      birthdate: user["birthdate"],
+      email: user["email"],
+      documents: user["documents"],
+      age: user["age"],
+      password: user["password"],
+      profile: user["profile"],
+      country: user["country"],
+      bio: user["bio"]
+    }
   }
 }
