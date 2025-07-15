@@ -87,6 +87,7 @@ export class Users extends Application {
   }
 
   static async update(id, formData) {
+    console.log('==>> edit# formData: ', formData);
     if (!formData) {
       return;
     }
@@ -96,14 +97,35 @@ export class Users extends Application {
     let user = await User.find(id);
 
     if (!user) {
+      System.flash('User not found.', 'alert');
+
       return;
     }
 
     Object.assign(user, values);
-    await user.save();
 
-    System.flash('user updated successfully.', 'success');
-    System.navigate('/users');
+    try {
+      if (user.isValid()) {
+        await user.save();
+
+        System.flash('User updated successfully.', 'success');
+        System.navigate('/users');
+      }
+      else {
+        console.error("Validation errors:", user.errors);
+      }
+    } catch (error) {
+      console.error("Error saving:", error);
+      System.flash(`User create error: ${error}.`, 'alert');
+      // System.navigate('/users');
+    }
+
+    var data = {
+      errors: user.errors,
+      user: user,
+      profile_options: this.profile_options()
+    };
+
   }
 
   static async destroy(id) {

@@ -7,7 +7,7 @@ export class User extends Application {
 
   validate() {
     return {
-      presence: ["name", "email"],
+      presence: ["name", "birthdate", "email"],
       format: {
         email: {
           pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
