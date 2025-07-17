@@ -1,0 +1,15 @@
+{
+  "application_name": "Volundir SPA Demo",
+  "interface": ["volundir", "bootstrap-5.3.0"],
+  "storage": ["json", "rest", "xml"],
+  "auto_load_models": ["user", "sessions"],
+  "logger": {
+    "core": ["info", "notice", "warn", "error", "debugger"],
+    "controllers": ["info", "notice", "warn", "error", "debugger"],
+    "models": ["info", "notice", "warn", "error", "debugger"],
+    "views": ["info", "notice", "warn", "error", "debugger"],
+    "integrations": ["info", "notice", "warn", "error", "debugger"],
+    "interface": ["info", "notice", "warn", "error", "debugger"],
+    "storage": ["info", "notice", "warn", "error", "debugger"]
+  }
+}
