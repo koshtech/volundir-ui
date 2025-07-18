@@ -1,0 +1,31 @@
+<h2>Cadastro</h2>
+
+{{form "form_default" action="users_path" method="post" class="form-horizontal" enctype="multipart/form-data"}}
+  {{field "_method" type="hidden" value="post"}}
+  {{field "name" type="text" class="form-control" placeholder="Your name"}}
+  {{field "terms" type="checkbox" class="form-check-input"}}
+  {{field "birthdate" type="date" label="Data de Nascimento" class="form-control"}}
+  {{field "email" type="email" class="form-control" placeholder="Email"}}
+  {{field "documents" type="file" label="Documentos" class="form-control" multiple=true}}
+  {{field "age" type="number" class="form-control" placeholder="Senha"}}
+  {{field "password" type="password" class="form-control" placeholder="Senha"}}
+  {{field "profile" type="select" class="form-check-input" options="profile_options"
+    data-on-change="populate"
+    data-model="country"
+    data-model-id="value"
+    data-model-params="active=1"
+    data-target="country"
+    data-target-value="id"
+    data-target-text="name"
+    data-helper="my_helper_func"
+    data-helper-param="my_var=my_value"
+  }}
+  {{field "country" type="select" class="form-control"}}
+  {{field "bio" type="text_area" class="form-control"}}
+  {{button type="submit" value="Cadastrar" class="btn btn-success"}}
+  {{link_to href="/" value="Cancelar" class="btn btn-link"}}
+{{end_form}}
+
+<p><a href="/">Home</a></p>
+
+<p>Location on server: /volundir-ui/app/views/users/new.html</p>

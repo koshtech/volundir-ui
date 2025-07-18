@@ -1,0 +1,48 @@
+<h1>Users index</h1>
+
+<p><a href="/users/new" >New</a> |<a href="/" >Back</a></p>
+
+<div id="users-index"></div>
+
+<p>Single user ID 2: {{user.id}} - {{user.name}} </p>
+<p>First user ID 1: {{first.id}} - {{first.name}}</p>
+<p>Last user ID 3: {{last.id}} - {{last.name}}</p>
+<p>Total users: {{total}}</p>
+
+<!-- /app/views/users/index.html -->
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Profile</th>
+      <th>Admin?</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="user-rows">
+    {{each user in users}}
+    <tr>
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.profile}}</td>
+      <td>
+        {{if user.profile == 'admin'}}
+          <strong>Admin</strong>
+        {{elseif user.profile == 'member'}}
+          <strong>Member</strong>
+        {{else}}
+          <em>User</em>
+        {{endif}}
+      </td>
+      <td>
+        <a href="/users/{{user.id}}/edit">Edit</a> |
+        <a data-confirm="Are you sure?" data-method="delete" href="/users/{{user.id}}" rel="nofollow">Delete</a>
+      </td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+
+
+<p>Location on server: /app/views/users/index.html</p>

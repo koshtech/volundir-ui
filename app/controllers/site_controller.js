@@ -16,4 +16,8 @@ export class Site {
 
     return data;
   }
+
+  static page404 () {
+    return {};
+  }
 }
