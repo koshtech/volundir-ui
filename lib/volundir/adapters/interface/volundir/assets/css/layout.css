@@ -145,6 +145,10 @@ nav ul {
   background: #fafafa;
 }
 
+.page-content {
+  min-height:50vh;
+}
+
 .footer {
   background-color: #fff;
   border-top: 1px solid #ddd;

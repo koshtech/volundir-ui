@@ -1,8 +1,9 @@
 import { getAuthHeaders } from '/lib/volundir/core/auth.js';
-// import { Flash } from '/lib/volundir/core/flash.js';
 import { System } from '/lib/volundir/core/system.js';
 import { User } from '/app/models/user.js';
 import { Application } from '/app/controllers/application_controller.js';
+
+let data = {};
 
 export class Users extends Application {
   static async index() {
