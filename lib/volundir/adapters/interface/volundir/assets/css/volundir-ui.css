@@ -1,6 +1,5 @@
 @import url("button.css");
 @import url("button-sizes.css");
-@import url("layout.css");
 @import url("list.css");
 @import url("modal.css");
 @import url("grid.css");
@@ -10,3 +9,4 @@
 @import url("dropdown.css");
 @import url("forms.css");
 @import url("pagination.css");
+@import url("layout.css");

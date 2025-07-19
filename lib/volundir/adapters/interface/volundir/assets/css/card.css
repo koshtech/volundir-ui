@@ -28,6 +28,7 @@
   cursor: pointer;
   color: #aaa;
 }
+
 .card-title .close-btn:hover {
   color: #777;
 }
