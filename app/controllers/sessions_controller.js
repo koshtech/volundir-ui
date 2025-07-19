@@ -1,36 +1,57 @@
-// import { getAuthHeaders } from '/lib/volundir/core/auth.js';
-// import page from '//unpkg.com/page/page.mjs';
+import { System } from '/lib/volundir/core/system.js';
+
+let data = {};
 
 export class Sessions {
   static login() {
-    console.log("Método login do SessionsController");
-    // console.log('received: ', html);
+    console.log("SessionsController#login");
 
-    // return returned_data;
+    sessionStorage.setItem('auth', true);
+
+    data = {
+      message: "Login successfully called."
+    }
+
+    System.flash(data["message"], 'success');
+
+    return data;
   }
 
-  static register(html) {
-    console.log("Método register do SessionsController");
-    // console.log('received: ', html);
+  static register() {
+    console.log("SessionsController#register");
 
-    // return returned_data;
+    data = {
+      message: "Account register successfully called."
+    }
+
+    System.flash(data["message"], 'info');
+
+    return data;
   }
 
-  static forgot(html) {
-    console.log("Método forgot do SessionsController");
-    // console.log('received: ', html);
+  static forgot() {
+    console.log("SessionsController#forgot");
 
-    // return returned_data;
+    data = {
+      message: "Recover password successfully called."
+    }
+
+    System.flash(data["message"], 'info');
+
+    return data;
   }
 
-  static logout(html) {
-    console.log("Método logout do SessionsController");
-    // console.log('received: ', html);
+  static logout() {
+    console.log("SessionsController#logout");
 
     sessionStorage.removeItem('auth');
-    alert('Sessão encerrada.');
-    this.navigate('/');
 
-    // return returned_data;
+    data = {
+      message: "Session ended successfully."
+    }
+
+    System.flash(data["message"], 'success');
+
+    return data;
   }
 }
