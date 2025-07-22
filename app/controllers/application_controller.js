@@ -1,10 +1,6 @@
-// import { BaseModel } from '/lib/volundir/core/base_model.js';
+import { BaseController } from '/lib/volundir/core/base_controller.js';
 
-// export class Application extends BaseModel {
-export class Application {
-  // static flash () {
-  //   console.log('==============> test ok')
-  // }
+export class Application extends BaseController {
 }
 
 console.log('Loaded Application Controller');

@@ -1,232 +1,112 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Volundir Kit Repository Manager</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Volundir Kit Repository Manager</title>
 
-   <meta name="description" content="Volundir Kit Repository Manager provides tools to manage your kit repository efficiently.">
-  <meta name="keywords" content="Volundir, Kit, Repository, Manager, Admin, Dashboard">
-  <meta name="author" content="Your Name or Company">
-  <meta name="robots" content="index, follow">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="YOUR_WEBSITE_URL">
-  <meta property="og:title" content="Volundir Kit Repository Manager">
-  <meta property="og:description" content="Volundir Kit Repository Manager provides tools to manage your kit repository efficiently.">
-  <meta property="og:image" content="YOUR_IMAGE_URL">
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="YOUR_WEBSITE_URL">
-  <meta property="twitter:title" content="Volundir Kit Repository Manager">
-  <meta property="twitter:description" content="Volundir Kit Repository Manager provides tools to manage your kit repository efficiently.">
-  <meta property="twitter:image" content="YOUR_IMAGE_URL">
+    <meta name="description" content="Volundir Kit Repository Manager provides tools to manage your kit repository efficiently.">
+    <meta name="keywords" content="Volundir, Kit, Repository, Manager, Admin, Dashboard">
+    <meta name="author" content="Your Name or Company">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_WEBSITE_URL">
+    <meta property="og:title" content="Volundir Kit Repository Manager">
+    <meta property="og:description" content="Volundir Kit Repository Manager provides tools to manage your kit repository efficiently.">
+    <meta property="og:image" content="YOUR_IMAGE_URL">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_WEBSITE_URL">
+    <meta property="twitter:title" content="Volundir Kit Repository Manager">
+    <meta property="twitter:description" content="Volundir Kit Repository Manager provides tools to manage your kit repository efficiently.">
+    <meta property="twitter:image" content="YOUR_IMAGE_URL">
 
-  <link href="http://localhost:3020/lib/volundir/adapters/interface/volundir/assets/css/volundir-ui.css" rel="stylesheet" media="all">
-  <!-- <link href="{{load_asset css/volundir-ui.css}}" rel="stylesheet" media="all"> -->
-<!--   <script src="//load_asset js/actions.js//"></script>
-  <script src="//load_asset js/modal.js//"></script>
-  <script src="//load_asset js/volundir.js//"></script>
-  <script src="//load_asset js/json-requests.js//"></script>
-  <script src="//load_asset js/volundir-ui.js//"></script> -->
-  <script>
-    // Script para o dropdown (notificações e usuário)
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-        toggle.addEventListener('click', function() {
-          const menu = this.nextElementSibling;
-          if (menu && menu.classList.contains('dropdown-menu')) {
-            menu.classList.toggle('active');
-          }
-        });
-      });
-
-      // Fechar dropdown ao clicar fora
-      document.addEventListener('click', (event) => {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          const toggle = menu.previousElementSibling;
-          if (menu.classList.contains('active') && !toggle.contains(event.target) && !menu.contains(event.target)) {
-            menu.classList.remove('active');
-          }
-        });
-      });
-    });
-
-    // Script para o botão de fechar do card (exemplo simples)
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.card-title .close-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          btn.closest('.card').remove(); // Remove o card inteiro
-        });
-      });
-    });
-
-    // Exemplo de como adicionar uma mensagem flash
-    function showFlashMessage(message, type = 'info') {
-      const flashContainer = document.querySelector('.flash');
-      if (flashContainer) {
-        flashContainer.innerHTML = `<div class="flash ${type}">${message}</div>`;
-        setTimeout(() => {
-          flashContainer.innerHTML = ''; // Limpa a mensagem após 5 segundos
-        }, 5000);
-      }
-    }
-
-    // Exemplo de uso
-    document.addEventListener('DOMContentLoaded', () => {
-      // showFlashMessage('Bem-vindo de volta!', 'success');
-      // showFlashMessage('Ocorreu um erro ao salvar os dados.', 'error');
-    });
-
-  </script>
+    <!-- <link href="http://localhost:3020/lib/volundir/adapters/interface/volundir/assets/css/volundir-ui.css" rel="stylesheet" media="all"> -->
+    <link href="{{load_asset css/volundir-ui.css}}" rel="stylesheet" media="all">
+  <!--   <script src="//load_asset js/actions.js//"></script>
+    <script src="//load_asset js/modal.js//"></script>
+    <script src="//load_asset js/volundir.js//"></script>
+    <script src="//load_asset js/json-requests.js//"></script>
+    <script src="//load_asset js/volundir-ui.js//"></script> -->
   </head>
 
   <body class="layout">
-    <div class="flash"></div> <aside class="sidebar-left"> <h2>Menu</h2>
-      <nav>
-        <ul> <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="/store">Store</a></li>
-          <li class="nav-item"><a class="nav-link" href="/users">Users</a></li>
-          <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-        </ul>
-      </nav>
-      <div class="row mt-3"> <div class="col-6"> <a href="/some_action" class="btn btn-success btn-micro">Option 1</a> </div>
-        <div class="col-6"> <a href="/some_action" class="btn">Option 2</a> </div>
-        <div class="col-12 mt-2"> <a href="/some_action" class="btn btn-large">Option 3</butaton> </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12"> <a href="/some_place" title="bla">Test Link</a> </div>
-      </div>
-    </aside>
+    <div class="layout-container">
+      <aside class="sidebar-left">
+        <p>Volundir</p>
+        <h2>Menu</h2>
+        <nav>
+          <ul>
+            <li class="nav-item"><a href="/">Home</a></li>
+            <!-- <li class="nav-item"><a href="/dashboard">Dashboard</a></li> -->
+            <!-- <li class="nav-item"><a href="/store">Repository</a></li> -->
+            <li class="nav-item"><a href="/users">Users</a></li>
+            <li class="nav-item"><a href="/register">Register</a></li>
+            <li class="nav-item"><a href="/login">Login</a></li>
+            <li class="nav-item"><a href="/logout">Logout</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-    <div class="main-content-right"> <div class="navbar">
-        <span>VKRM Painel</span>
-        <div>
-          <div class="dropdown">
-            <button class="notification-icon dropdown-toggle btn-mini mr-2">
-              &#128276; <span class="notification-count">3</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li class="dropdown-header">Notificações Recentes</li>
-              <li><a href="#">Nova mensagem de João</a></li>
-              <li><a href="#">Seu pedido #123 foi enviado</a></li>
-              <li><a href="#">Lembrete: Reunião às 14h</a></li>
-              <li><a href="#" class="text-center">Ver todas</a></li>
-            </ul>
+      <div class="main-content-right">
+        <div class="navbar">
+          <span>Admin Panel</span>
+          <div>
+            <div class="notification dropdown">
+              <button class="notification-icon dropdown-toggle btn-mini">
+                &#128276; <span class="notification-count">3</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Recent Notifications</li>
+                <li><a href="#">New message from João</a></li>
+                <li><a href="#">Your order #123 was delivered</a></li>
+                <li><a href="#">Reminder: Meet at 14h</a></li>
+                <li><a href="#" class="text-center">All</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button class="dropdown-toggle btn-mini">
+                <img src="https://via.placeholder.com/30" alt="User Avatar" class="user-profile-img" />
+                John Doe
+              </button>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Hi, John!</li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </div>
+
+            <button class="btn-success btn-mini ml-2" onclick="document.getElementById('modal-example').classList.add('show')">Open Modal</button>
           </div>
+        </div>
 
-          <div class="dropdown">
-            <button class="dropdown-toggle btn-mini">
-              <img src="https://via.placeholder.com/30" alt="User Avatar" class="user-profile-img">
-              Usuário Teste
-            </button>
-            <ul class="dropdown-menu">
-              <li class="dropdown-header">Olá, Usuário!</li>
-              <li><a href="/profile">Meu Perfil</a></li>
-              <li><a href="/settings">Configurações</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a href="/logout">Sair</a></li>
-            </ul>
-          </div>
+        <div class="content">
+          <div class="flash"></div>
+          <div class="container mt-4" id="app"></div>
+        </div>
 
-          <button data-toggle="modal" data-target="#modal-example" class="btn-success btn-mini ml-2">Abrir Modal</button>
+        <footer class="footer">&copy; 2025 Volundir Kit Repository</footer>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-example">
+      <div class="modal-content">
+        <div class="modal-title">
+          <button class="close">&times;</button>
+          Modal Title
+        </div>
+        <div class="modal-body">
+          <h2>Modal Example Subtitle</h2>
+          <p>This is an example modal window, activated by the top right button.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-action="submit" data-method="post" class="submit-modal-example btn btn-success">Submit</button>
+          <button type="button" class="btn btn-cancel close">Cancel</button>
         </div>
       </div>
-
-      <div class="content">
-        <div class="container mt-4" id="app"></div>
-
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-4"> <div class="card">
-              <div class="card-content">
-                <div class="card-title">
-                  Título do Card
-                  <button class="close-btn">&times;</button>
-                </div>
-                <div class="card-body">
-                  <p>Este é um exemplo de card com conteúdo.</p>
-
-                  <h3>Formulário de Exemplo</h3>
-                  <form>
-                    <div class="form-group">
-                      <label for="inputName">Nome:</label>
-                      <input type="text" id="inputName" class="form-control" placeholder="Seu nome">
-                    </div>
-                    <div class="form-group">
-                      <label for="inputEmail">Email:</label>
-                      <input type="email" id="inputEmail" class="form-control" placeholder="seu@email.com">
-                    </div>
-                    <div class="form-group">
-                      <label for="selectOption">Selecione uma opção:</label>
-                      <select id="selectOption" class="form-control">
-                        <option value="">Selecione...</option>
-                        <option value="1">Opção 1</option>
-                        <option value="2">Opção 2</option>
-                        <option value="3">Opção 3</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="textareaMessage">Mensagem:</label>
-                      <textarea id="textareaMessage" class="form-control" rows="3" placeholder="Sua mensagem"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <div class="form-check">
-                        <input type="checkbox" id="checkTerms" class="form-check-input">
-                        <label for="checkTerms" class="form-check-label">Aceito os termos e condições</label>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="form-check form-check-inline">
-                        <input type="radio" id="radioOption1" name="radioOptions" class="form-check-input" value="1">
-                        <label for="radioOption1" class="form-check-label">Radio 1</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input type="radio" id="radioOption2" name="radioOptions" class="form-check-input" value="2">
-                        <label for="radioOption2" class="form-check-label">Radio 2</label>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-success">Enviar Formulário</button>
-                  </form>
-                </div>
-                <div class="card-footer">
-                  <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                      <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
-                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-8">
-            </div>
-        </div>
-      </div>
-
-      <footer class="footer">
-        &copy; 2025 Volundir Kit Repository
-      </footer>
     </div>
 
   </body>
-
-  <div class="modal" id="modal-example">
-    <div class="modal-content">
-      <div class="modal-title">
-        <button class="close">&times;</button>
-        Modal Title
-      </div>
-      <div class="modal-body">
-        <h2>Exemplo de Modal</h2>
-        <p>Esta é uma janela modal de exemplo, ativada pelo botão superior direito.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" data-action="submit" data-method="post" class="submit-modal-example btn btn-success">Submit</button>
-        <button type="button" class="btn btn-cancel close">Cancel</button>
-      </div>
-    </div>
-  </div>
-
-  </html>
+</html>

@@ -1,10 +1,33 @@
 <h2>Login</h2>
-<form id="loginForm" class="mb-3">
-  <input name="email" class="form-control mb-2" placeholder="Email" />
-  <input name="password" type="password" class="form-control mb-2" placeholder="Senha" />
-  <button class="btn btn-primary">Entrar</button>
-  <a class="btn btn-default" href="/">Cancelar</a>
-</form>
-<a href="/forgot">Esqueci minha senha</a>
 
-<p>Location on server: /volundir-ui/app/views/sessions/login.html</p>
+<div class="row mt-3">
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-title">
+          Start your session
+          <button class="close-btn" title="Your session was ended.">!</button>
+        </div>
+        <div class="card-body page-content">
+          <h4 class="mb-3">Login Page Example</h4>
+          <p>This is a sample login page.</p>
+            <p>
+              We can offer my options to the user, incluindo a link to <a href="/login">login</a> again.
+            <form id="loginForm" class="mb-3">
+              <input name="email" class="form-control mb-2" placeholder="Email" />
+              <input name="password" type="password" class="form-control mb-2" placeholder="Senha" />
+              <button class="btn btn-primary">Entrar</button>
+              <a class="btn btn-default" href="/">Cancelar</a>
+            </form>
+            <a href="/forgot">Esqueci minha senha</a>
+          </p>
+        </div>
+        <div class="card-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Location on server: /volundir-ui/app/views/vld/sessions/logout.html</p>

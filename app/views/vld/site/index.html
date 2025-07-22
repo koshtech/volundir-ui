@@ -1,4 +1,6 @@
-<h1>Welcome, {{user.name}}!</h1>
+{{if user_loggedin == 'true'}}
+  <h1>Welcome, {{user.name}}!</h1>
+{{endif}}
 
 <div class="row">
   <div class="col-12 col-md-6 col-lg-4"> <div class="card">
