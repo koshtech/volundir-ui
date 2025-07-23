@@ -1,0 +1,14 @@
+{
+  "page-layout": "",
+  "body": {
+    "breadbrumb": "",
+    "page-nav": "",
+    "page-sidebar-left": "",
+    "page-main": {
+      "page-title": true,
+
+    },
+    "page-sidebar-right": false,
+    "page-footer": ""
+  }
+}

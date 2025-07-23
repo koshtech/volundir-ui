@@ -1,0 +1,7 @@
+{
+  "id": "1234",
+  "app_id": "meu_app",
+  "type": "mail",
+  "action": "send_mail",
+  "parameters": "to='user@example.com',subject='Template Test Message', body='A Simple Template Test Message.'"
+}

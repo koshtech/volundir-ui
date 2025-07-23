@@ -14,6 +14,7 @@ Volundir is a set of components that can be used together to deliver the best ex
 
 - **Volundir-UI** – A lightweight CSS + JS framework
 - **Volundir-App** – A lightweight and agnostic Vanilla JS framework
+- **volundir-depot** - The Volundir Depot System, a repository of Volundir components
 - **Volundir-Rails** – A dynamic Volundir backend using Rails (requires a Rails hosting)
 - **Volundir-Laravel** – A dynamic Volundir backend using Laravel (requires a Laravel hosting)
 - **Volundir-Static** – Tools and scripts to improve static usage of Volundir (requires FTP or SSH access)

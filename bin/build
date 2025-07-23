@@ -1,0 +1,41 @@
+#!/bin/bash
+
+APP_NAME=$2
+PROFILE="default"
+
+# Parse argumentos do tipo profile=default
+for ARG in "$@"; do
+  case $ARG in
+    profile=*)
+      PROFILE="${ARG#*=}"
+      ;;
+  esac
+done
+
+if [ -z "$APP_NAME" ]; then
+  echo "Uso: $0 create nome_da_app profile=default"
+  exit 1
+fi
+
+BASE_DIR="$PWD/$APP_NAME"
+BIN_DIR="$BASE_DIR/bin"
+QUEUE_DIR="$BASE_DIR/queue"
+PROCESSED_DIR="$QUEUE_DIR/processed"
+LOG_DIR="$BASE_DIR/logs"
+SCRIPTS_DIR="$BASE_DIR/scripts/actions"
+TEMPLATE_DIR="$PWD/templates"
+
+mkdir -p "$BIN_DIR" "$QUEUE_DIR" "$PROCESSED_DIR" "$LOG_DIR" "$SCRIPTS_DIR"
+
+# Copia arquivos de template
+cp "$TEMPLATE_DIR/crontab.txt" "$BASE_DIR/crontab.txt"
+cp "$TEMPLATE_DIR/sample_task.json" "$QUEUE_DIR/1234.json"
+cp "$TEMPLATE_DIR/schedule.sh" "$BIN_DIR/schedule"
+chmod +x "$BIN_DIR/schedule"
+cp "$TEMPLATE_DIR/send_mail.sh" "$SCRIPTS_DIR/send_mail.sh"
+chmod +x "$SCRIPTS_DIR/send_mail.sh"
+
+
+echo "Aplicação '$APP_NAME' criada com sucesso em '$BASE_DIR'"
+echo "Para instalar o crontab:"
+echo "  crontab $BASE_DIR/crontab.txt"

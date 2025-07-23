@@ -62,7 +62,7 @@ export class Users extends Application {
       }
     } catch (error) {
       console.error("Error saving:", error);
-      System.flash(`User create error: ${error}.`, 'alert');
+      System.flash(`User create error: ${error}.`, 'error');
       // System.navigate('/users');
     }
 
@@ -98,7 +98,7 @@ export class Users extends Application {
     let user = await User.find(id);
 
     if (!user) {
-      System.flash('User not found.', 'alert');
+      System.flash('User not found.', 'error');
 
       return;
     }
@@ -117,7 +117,7 @@ export class Users extends Application {
       }
     } catch (error) {
       console.error("Error saving:", error);
-      System.flash(`User create error: ${error}.`, 'alert');
+      System.flash(`User create error: ${error}.`, 'error');
       // System.navigate('/users');
     }
 

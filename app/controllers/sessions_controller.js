@@ -24,7 +24,7 @@ export class Sessions {
       message: "Account register successfully called."
     }
 
-    System.flash(data["message"], 'info');
+    System.flash(data["message"], 'warning');
 
     return data;
   }
@@ -36,7 +36,7 @@ export class Sessions {
       message: "Recover password successfully called."
     }
 
-    System.flash(data["message"], 'info');
+    System.flash(data["message"], 'error');
 
     return data;
   }
@@ -50,7 +50,7 @@ export class Sessions {
       message: "Session ended successfully."
     }
 
-    System.flash(data["message"], 'success');
+    System.flash(data["message"], 'info');
 
     return data;
   }

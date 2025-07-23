@@ -22,6 +22,7 @@
 
     <!-- <link href="http://localhost:3020/lib/volundir/adapters/interface/volundir/assets/css/volundir-ui.css" rel="stylesheet" media="all"> -->
     <link href="{{load_asset css/volundir-ui.css}}" rel="stylesheet" media="all">
+    <!-- <script src="{{load_asset js/flash.js}}"></script> -->
   <!--   <script src="//load_asset js/actions.js//"></script>
     <script src="//load_asset js/modal.js//"></script>
     <script src="//load_asset js/volundir.js//"></script>
@@ -41,6 +42,7 @@
             <!-- <li class="nav-item"><a href="/store">Repository</a></li> -->
             <li class="nav-item"><a href="/users">Users</a></li>
             <li class="nav-item"><a href="/register">Register</a></li>
+            <li class="nav-item"><a href="/forgot">Forgot</a></li>
             <li class="nav-item"><a href="/login">Login</a></li>
             <li class="nav-item"><a href="/logout">Logout</a></li>
           </ul>
@@ -83,7 +85,7 @@
         </div>
 
         <div class="content">
-          <div class="flash"></div>
+          <div id="flash-messages"></div>
           <div class="container mt-4" id="app"></div>
         </div>
 

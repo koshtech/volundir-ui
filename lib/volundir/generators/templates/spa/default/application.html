@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicativo SPA - Página Index</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, nav, main, footer { padding: 1em; }
+    header { background-color: #333; color: white; }
+    nav { background-color: #f4f4f4; display: flex; gap: 1em; }
+    nav a { text-decoration: none; padding: 0.5em; color: #333; }
+    main { padding: 1em; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1em; }
+    table, th, td { border: 1px solid #ddd; }
+    th, td { padding: 0.5em; text-align: left; }
+    .pagination button { margin: 0 2px; }
+    .filters { margin-top: 1em; display: flex; gap: 1em; }
+    .form-section, .table-section { margin-top: 2em; }
+    .btn { padding: 0.5em 1em; cursor: pointer; }
+    .btn-primary { background-color: #007BFF; color: white; border: none; }
+    .btn-danger { background-color: #DC3545; color: white; border: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Meu Aplicativo SPA</h1>
+</header>
+
+<nav>
+  <a href="#home">Início</a>
+  <a href="#cadastro">Cadastro</a>
+  <a href="#relatorio">Relatórios</a>
+</nav>
+
+<main>
+
+  <!-- Filtros e Busca -->
+  <section class="filters">
+    <input type="text" placeholder="Buscar por nome..." id="search-input">
+    <select id="filter-status">
+      <option value="">Status</option>
+      <option value="ativo">Ativo</option>
+      <option value="inativo">Inativo</option>
+    </select>
+    <button class="btn btn-primary" onclick="buscar()">Buscar</button>
+  </section>
+
+  <!-- Formulário -->
+  <section class="form-section">
+    <h2>Novo Registro</h2>
+    <form id="formulario">
+      <input type="text" placeholder="Nome" name="nome" required>
+      <input type="email" placeholder="E-mail" name="email" required>
+      <select name="status">
+        <option value="ativo">Ativo</option>
+        <option value="inativo">Inativo</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+  </section>
+
+  <!-- Tabela -->
+  <section class="table-section">
+    <h2>Registros</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-registros">
+        <tr>
+          <td>João Silva</td>
+          <td>joao@email.com</td>
+          <td>Ativo</td>
+          <td>
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <!-- Mais linhas via JavaScript -->
+      </tbody>
+    </table>
+
+    <!-- Paginação -->
+    <div class="pagination">
+      <button class="btn">«</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">»</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Meu Aplicativo SPA</p>
+</footer>
+
+<script>
+  // Exemplo de função fictícia de busca
+  function buscar() {
+    const nome = document.getElementById('search-input').value;
+    const status = document.getElementById('filter-status').value;
+    alert(`Buscar por: ${nome}, Status: ${status}`);
+    // Aqui você faria a filtragem real
+  }
+</script>
+
+</body>
+</html>

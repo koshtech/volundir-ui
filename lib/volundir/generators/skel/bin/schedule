@@ -1,0 +1,26 @@
+#!/bin/bash
+
+APP_PATH="$(cd "$(dirname "$0")/../" && pwd)"
+QUEUE_DIR="$APP_PATH/queue"
+PROCESSED_DIR="$QUEUE_DIR/processed"
+LOGFILE="$APP_PATH/logs/schedule.log"
+
+mkdir -p "$PROCESSED_DIR" "$APP_PATH/logs"
+
+for FILE in "$QUEUE_DIR"/*.json; do
+  [ -e "$FILE" ] || continue
+
+  ACTION=$(jq -r '.action' "$FILE")
+  TYPE=$(jq -r '.type' "$FILE")
+  PARAMS=$(jq -r '.parameters' "$FILE")
+
+  SCRIPT="$APP_PATH/scripts/actions/${ACTION}.sh"
+  if [ -x "$SCRIPT" ]; then
+    echo "[$(date)] Executando $SCRIPT $PARAMS" >> "$LOGFILE"
+    eval "$SCRIPT $PARAMS" >> "$LOGFILE" 2>&1
+  else
+    echo "[$(date)] Script $SCRIPT não encontrado ou não executável." >> "$LOGFILE"
+  fi
+
+  mv "$FILE" "$PROCESSED_DIR/"
+done

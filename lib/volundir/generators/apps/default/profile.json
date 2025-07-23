@@ -1,0 +1,7 @@
+{
+  "name": "default",
+  "dependencies": ["yq", "ruby", "git"],
+  "core": ["default"],
+  "builtin": ["sessions", "users", "admin", "site"],
+  "actions": ["send_mail"]
+}

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+APP_NAME=$2
+PROFILE="default"
+
+# parse argumentos do tipo profile=default
+for ARG in "$@"; do
+  case $ARG in
+    profile=*)
+      PROFILE="${ARG#*=}"
+      ;;
+  esac
+done
+
+echo ">> Criando app: $APP_NAME com profile: $PROFILE"
+
+# verifica se profile existe
+PROFILE_FILE="profiles/${PROFILE}.json"
+if [ ! -f "$PROFILE_FILE" ]; then
+  echo "Erro: Profile '$PROFILE' não encontrado."
+  exit 1
+fi
+
+# cria a pasta do app
+mkdir -p "$APP_NAME"
+
+# copia esqueleto
+cp -r templates/skel/. "$APP_NAME/"
+
+# lê módulos builtin do profile
+BUILTINS=$(jq -r '.builtin[]' "$PROFILE_FILE")
+
+for MODULE in $BUILTINS; do
+  echo ">> Copiando módulo: $MODULE"
+  cp -r "modules/$MODULE" "$APP_NAME/$MODULE"
+done
+
+echo ">> Aplicação '$APP_NAME' criada com sucesso!"

@@ -1,0 +1,11 @@
+{
+  "page-layout": ["topbar-sidebar-left", "topbar-sidebar-right", "topbar-sidebar-left-right"],
+  "body": {
+    "topbar": "",
+    "sidebar-left": "",
+    "messages": "",
+    "main": "",
+    "sidebar-right": false,
+    "footer": ""
+  }
+}
