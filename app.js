@@ -1,3 +1,3 @@
-import { AppRouter } from './lib/volundir/core/app_router.js';
+import { VolundirApp } from './lib/volundir/core/volundir_app.js';
 
-const App = new AppRouter();
+const App = new VolundirApp();
