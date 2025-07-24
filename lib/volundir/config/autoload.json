@@ -1,0 +1,9 @@
+{
+  "setting": "core/setting.js",
+  "system": "core/system.js",
+  "storage": "core/storage.js",
+  "cache": "core/cache.js",
+  "display": "core/display.js",
+  "component": "core/component.js",
+  "render": "core/render.js"
+}
