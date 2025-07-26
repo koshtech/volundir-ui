@@ -48,7 +48,7 @@ export class Users extends Application {
 
     const values = Object.fromEntries(formData.entries());
 
-    let user = new User(values);
+    let user = new User(this.secure_params(values));
 
     try {
       if (user.isValid()) {
@@ -103,7 +103,7 @@ export class Users extends Application {
       return;
     }
 
-    Object.assign(user, values);
+    Object.assign(user, this.secure_params(values);
 
     try {
       if (user.isValid()) {
