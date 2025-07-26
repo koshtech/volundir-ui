@@ -1,3 +1,5 @@
-import { VolundirApp } from './lib/volundir/core/volundir_app.js';
+import { VolundirApp } from '/lib/volundir/core/volundir_app.js';
 
-const App = new VolundirApp();
+var App = new VolundirApp();
+
+App.run();

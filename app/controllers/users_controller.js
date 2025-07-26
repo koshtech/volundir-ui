@@ -1,12 +1,17 @@
 import { getAuthHeaders } from '/lib/volundir/core/auth.js';
-import { System } from '/lib/volundir/core/system.js';
-import { User } from '/app/models/user.js';
+// import { System } from '/lib/volundir/core/system.js';
+// import { User } from '/app/models/user.js';
+import { Coordinator } from '/lib/volundir/core/coordinator.js';
 import { Application } from '/app/controllers/application_controller.js';
 
-let data = {};
-
 export class Users extends Application {
-  static async index() {
+  constructor () {
+    super();
+
+    this.data = {};
+  }
+
+  async index() {
     const headers = {
       ...getAuthHeaders(), 'Content-Type': 'application/json'
     };
@@ -16,7 +21,7 @@ export class Users extends Application {
     let first = users.first();
     let last  = users.last();
 
-    let data = {
+    this.data = {
         user: user,
         users: users.toArray(),
         first: first,
@@ -24,22 +29,23 @@ export class Users extends Application {
         total: users.total()
     };
 
-    return data;
+    return this.data;
   }
 
-  static new(data={}) {
-    console.log('==>> new# data: ', data);
-    let user = data['user'] ? data['user'] : {}
+  new(_data={}) {
+    console.log('==>> new# data: ', _data);
+    // let user = _data['user'] ? _data['user'] : {};
+    let user = _data;
 
-    data = {
+    this.data = {
       user: this.secure_params(user),
       profile_options: this.profile_options()
     };
 
-    return data;
+    return this.data;
   }
 
-  static async create(formData) {
+  async create(formData) {
     console.log('=====>>> create formData:', formData);
 
     if (!formData) {
@@ -54,7 +60,7 @@ export class Users extends Application {
       if (user.isValid()) {
         await user.save();
 
-        System.flash('User created successfully.', 'success');
+        display.flash('User created successfully.', 'success');
         System.navigate('/users');
       }
       else {
@@ -62,32 +68,32 @@ export class Users extends Application {
       }
     } catch (error) {
       console.error("Error saving:", error);
-      System.flash(`User create error: ${error}.`, 'error');
+      display.flash(`User create error: ${error}.`, 'error');
       // System.navigate('/users');
     }
 
-    var data = {
+    this.data = {
       errors: user.errors,
       user: user,
       profile_options: this.profile_options()
     };
 
-    return data;
+    return this.data;
   }
 
-  static async edit(id) {
+  async edit(id) {
     var user  = await User.find(id);
 
-    var data = {
+    this.data = {
       user: user,
       profile_options: this.profile_options(),
       appVersion: '1.0.0'
     };
 
-    return data;
+    return this.data;
   }
 
-  static async update(id, formData) {
+  async update(id, formData) {
     console.log('==>> edit# formData: ', formData);
     if (!formData) {
       return;
@@ -98,18 +104,18 @@ export class Users extends Application {
     let user = await User.find(id);
 
     if (!user) {
-      System.flash('User not found.', 'error');
+      display.flash('User not found.', 'error');
 
       return;
     }
 
-    Object.assign(user, this.secure_params(values);
+    Object.assign(user, this.secure_params(values));
 
     try {
       if (user.isValid()) {
         await user.save();
 
-        System.flash('User updated successfully.', 'success');
+        display.flash('User updated successfully.', 'success');
         System.navigate('/users');
       }
       else {
@@ -117,11 +123,11 @@ export class Users extends Application {
       }
     } catch (error) {
       console.error("Error saving:", error);
-      System.flash(`User create error: ${error}.`, 'error');
+      display.flash(`User create error: ${error}.`, 'error');
       // System.navigate('/users');
     }
 
-    var data = {
+    this.data = {
       errors: user.errors,
       user: user,
       profile_options: this.profile_options()
@@ -129,7 +135,7 @@ export class Users extends Application {
 
   }
 
-  static async destroy(id) {
+  async destroy(id) {
     // console.log("UsersController#destroy:", id);
 
     let user = await User.find(id);
@@ -141,11 +147,11 @@ export class Users extends Application {
 
     await user.destroy();
 
-    System.flash('user deleted successfully.', 'success');
+    display.flash('user deleted successfully.', 'success');
     System.navigate('/users');
   }
 
-  static profile_options() {
+  profile_options() {
     return [
       { "value": "admin", "label": "Administrator" },
       { "value": "member", "label": "Member" },
@@ -155,7 +161,7 @@ export class Users extends Application {
     ];
   }
 
-  static secure_params(user) {
+  secure_params(user) {
     return {
       name: user["name"],
       terms: user["terms"],

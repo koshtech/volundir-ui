@@ -1,0 +1,21 @@
+/* status */
+
+.icon.success::before,
+.flash-icon.success::before {
+  content: '✔️';
+}
+
+.icon.error::before,
+.flash-icon.error::before {
+  content: '❌';
+}
+
+.icon.info::before,
+.flash-icon.info::before {
+  content: 'ℹ️';
+}
+
+.icon.warning::before,
+.flash-icon.warning::before {
+  content: '⚠️';
+}

@@ -1,9 +1,14 @@
 {
-  "setting": "core/setting.js",
-  "system": "core/system.js",
-  "storage": "core/storage.js",
-  "cache": "core/cache.js",
-  "display": "core/display.js",
-  "component": "core/component.js",
-  "render": "core/render.js"
+  "configuration": "modules/configuration.js",
+  "router":        "modules/router.js",
+  "interceptor":   "modules/interceptor.js",
+  "timer":         "modules/timer.js",
+  "cache":         "modules/cache.js",
+  "storage":       "modules/storage.js",
+  "validator":     "modules/validator.js",
+  "file":          "modules/file.js",
+  "system":        "modules/system.js",
+  "render":        "modules/render.js",
+  "component":     "modules/component.js",
+  "display":       "modules/display.js"
 }

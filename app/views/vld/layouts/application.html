@@ -53,34 +53,46 @@
         <div class="navbar">
           <span>Admin Panel</span>
           <div>
-            <div class="notification dropdown">
-              <button class="notification-icon dropdown-toggle btn-mini">
-                &#128276; <span class="notification-count">3</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li class="dropdown-header">Recent Notifications</li>
-                <li><a href="#">New message from João</a></li>
-                <li><a href="#">Your order #123 was delivered</a></li>
-                <li><a href="#">Reminder: Meet at 14h</a></li>
-                <li><a href="#" class="text-center">All</a></li>
-              </ul>
-            </div>
+            <!-- {{if user_loggedin == 'true'}} -->
+              <div class="notification dropdown">
+                <button class="notification-icon dropdown-toggle btn-mini">
+                  &#128276; <span class="notification-count">3</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">Recent Notifications</li>
+                  <li><a href="#">New message from João</a></li>
+                  <li><a href="#">Your order #123 was delivered</a></li>
+                  <li><a href="#">Reminder: Meet at 14h</a></li>
+                  <li><a href="#" class="text-center">All</a></li>
+                </ul>
+              </div>
 
-            <div class="dropdown">
-              <button class="dropdown-toggle btn-mini">
-                <img src="https://via.placeholder.com/30" alt="User Avatar" class="user-profile-img" />
-                John Doe
-              </button>
-              <ul class="dropdown-menu">
-                <li class="dropdown-header">Hi, John!</li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/settings">Settings</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a href="/logout">Logout</a></li>
-              </ul>
-            </div>
-
-            <button class="btn-success btn-mini ml-2" onclick="document.getElementById('modal-example').classList.add('show')">Open Modal</button>
+              <div class="dropdown">
+                <button class="dropdown-toggle btn-mini">
+                  <!-- <img src="https://via.placeholder.com/30" alt="User Avatar" class="user-profile-img" /> -->
+                  <span class="icon user"></span>
+                  John Doe
+                </button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">Hi, John!</li>
+                  <li><a href="/profile">Profile</a></li>
+                  <li><a href="/settings">Settings</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a href="/logout">Logout</a></li>
+                </ul>
+              </div>
+            <!-- {{endif}} -->
+            <button class="btn-success btn-mini ml-2" onclick="document.getElementById('modal-example').classList.add('show')">Modal index </button>
+            <button
+              class="btn-success btn-mini ml-2"
+              data-modal="static"
+              modal-id="test-modal-static"
+              modal-title="My Test Modal"
+              modal-body="This is a text content."
+              modal-button-confirm-label="Confirm!"
+              modal-button-confirm-action="/my_action"
+              modal-button-cancel-label="Cancel">Modal Loaded
+            </button>
           </div>
         </div>
 

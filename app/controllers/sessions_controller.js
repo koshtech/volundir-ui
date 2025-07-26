@@ -1,69 +1,54 @@
 import { Coordinator } from '/lib/volundir/core/coordinator.js';
-import { Display } from '/lib/volundir/core/display.js';
 import { Application } from '/app/controllers/application_controller.js';
 
-let data = {};
-
 export class Sessions extends Application {
-  setModules(_modules) {
-    this._modules = _modules;
-    console.log('===> Sessions.setModules = this._modules: ', this._modules);
-  }
   login() {
-    console.log("SessionsController#login");
-    console.log('===> Sessions.login = this._modules: ', this._modules);
-
     sessionStorage.setItem('auth', true);
 
-    data = {
+    this.data = {
       message: "Login successfully called."
     }
 
-    let display =  new Display();
+    this.display.flash(this.data["message"], 'success');
 
-    display.setModules(this._modules);
-    // const display = this.parent['display'];
-    // display.flash(data["message"], 'success');
-    display.flash(data["message"], 'success');
-
-    return data;
+    return this.data;
   }
 
-  static register() {
+  register() {
     console.log("SessionsController#register");
 
-    data = {
+    this.data = {
       message: "Account register successfully called."
     }
 
-    System.flash(data["message"], 'warning');
+    this.display.flash(this.data["message"], 'warning');
 
-    return data;
+    return this.data;
   }
 
-  static forgot() {
+  forgot() {
     console.log("SessionsController#forgot");
 
-    data = {
+    this.data = {
       message: "Recover password successfully called."
     }
 
-    System.flash(data["message"], 'error');
+    this.display.flash(this.data["message"], 'error');
 
-    return data;
+    return this.data;
   }
 
-  static logout() {
+  logout() {
     console.log("SessionsController#logout");
 
     sessionStorage.removeItem('auth');
 
-    data = {
+    this.data = {
       message: "Session ended successfully."
     }
 
-    System.flash(data["message"], 'info');
+    this.display.flash(this.data["message"], 'info');
 
-    return data;
+    return this.data;
   }
 }

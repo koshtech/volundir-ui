@@ -1,0 +1,77 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e0f2f7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.splash-screen p {
+  font-family: sans-serif;
+  color: #2c3e50;
+  font-size: 12px;
+  margin: 0;
+}
+
+@keyframes spin-clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container {
+  display: block;
+}
+
+.loading-panel {
+  margin-top: 50px;
+  font-size: 12px;
+}
+
+.loading-panel .loading-title {
+  float: left;
+}
+
+.loading-panel .loading-item {
+  float: right;
+}
+
+
+.loading-logo {
+  fill: #5c6600;
+  animation: pulse 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

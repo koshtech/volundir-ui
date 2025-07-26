@@ -1,4 +1,4 @@
-
+@import url("unicode-icons-status.css");
 
 /* Frame definitions  */
 
@@ -62,25 +62,7 @@
   border: 1px solid #ffeeba;
 }
 
-/* Icon types */
-
 .flash-icon::before {
   display: inline-block;
   margin-right: 0.5rem;
-}
-
-.flash-icon.success::before {
-  content: '✔️';
-}
-
-.flash-icon.error::before {
-  content: '❌';
-}
-
-.flash-icon.info::before {
-  content: 'ℹ️';
-}
-
-.flash-icon.warning::before {
-  content: '⚠️';
 }

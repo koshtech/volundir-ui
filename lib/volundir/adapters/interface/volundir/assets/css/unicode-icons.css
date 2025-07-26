@@ -1,0 +1,10 @@
+/*@import url("unicode-icons-status.css");*/
+
+.icon::before {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.icon.user::before {
+  content: '👤';
+}
