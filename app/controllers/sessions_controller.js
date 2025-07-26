@@ -5,14 +5,13 @@ import { Application } from '/app/controllers/application_controller.js';
 let data = {};
 
 export class Sessions extends Application {
-  setParent(parent) {
-    this.parent = parent;
-    console.log('===> Sessions.setParent = this.parent: ', this.parent);
+  setModules(_modules) {
+    this._modules = _modules;
+    console.log('===> Sessions.setModules = this._modules: ', this._modules);
   }
-
   login() {
     console.log("SessionsController#login");
-    console.log('===> Sessions.login = this.parent: ', this.parent);
+    console.log('===> Sessions.login = this._modules: ', this._modules);
 
     sessionStorage.setItem('auth', true);
 
@@ -22,7 +21,7 @@ export class Sessions extends Application {
 
     let display =  new Display();
 
-    display.setParent(this.parent);
+    display.setModules(this._modules);
     // const display = this.parent['display'];
     // display.flash(data["message"], 'success');
     display.flash(data["message"], 'success');
