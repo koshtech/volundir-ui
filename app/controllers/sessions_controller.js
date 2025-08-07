@@ -1,9 +1,10 @@
-import { Coordinator } from '/lib/volundir/core/coordinator.js';
+// import { Coordinator } from '/lib/volundir/core/coordinator.js';
 import { Application } from '/app/controllers/application_controller.js';
 
 export class Sessions extends Application {
   login() {
     sessionStorage.setItem('auth', true);
+    console.log(" [SessionsController][login]", this);
 
     this.data = {
       message: "Login successfully called."

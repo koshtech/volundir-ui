@@ -1,4 +1,4 @@
-import { BaseController } from '/lib/volundir/core/base_controller.js';
+import { BaseController } from '/lib/volundir/base/base_controller.js';
 
 export class Application extends BaseController {
   constructor (_modules) {

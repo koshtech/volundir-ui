@@ -1,11 +1,13 @@
 {
   "configuration": "modules/configuration.js",
+  "controller":    "modules/controller.js",
   "router":        "modules/router.js",
   "interceptor":   "modules/interceptor.js",
   "timer":         "modules/timer.js",
   "cache":         "modules/cache.js",
   "storage":       "modules/storage.js",
   "validator":     "modules/validator.js",
+  "file_utils":    "modules/file_utils.js",
   "file":          "modules/file.js",
   "system":        "modules/system.js",
   "render":        "modules/render.js",

@@ -1,4 +1,4 @@
-import { BaseModel } from '/lib/volundir/core/base_model.js';
+import { BaseModel } from '/lib/volundir/base/base_model.js';
 
 export class Application extends BaseModel {
 }

@@ -1,0 +1,20 @@
+{
+  "application_name": "Volundir SPA Demo",
+  "storage": "local_storage|session",
+  "auto_load_models": ["config_model", "object_register_model"],
+  "interface": {
+    "adapter": "volundir|bootstrap-5.3.0",
+    "code": "vld|bt-530",
+    "layouts": {
+      "main": "application",
+      "phone": "phone",
+      "tablet": "tablet"
+    }
+  },
+  "startUpInitLevel": "loadCoreModules|loadCoreModels|loadExtensions|loadConfiguration|loadModules|Interceptors|Adaptors|Components|DataModels|interface|RenderAppLayout|appReady",
+  "logger": {
+    "initLevel": "loadCoreModules|loadCoreModels|loadExtensions|loadConfiguration|loadModules|Interceptors|Adaptors|Components|DataModels|interface|RenderAppLayout|appReady",
+    "level": "none|production|staging|requests|storage|app|development|errors|debugger",
+    "storage": "console|developerPanel|storage"
+  }
+}

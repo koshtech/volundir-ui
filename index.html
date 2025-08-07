@@ -5,24 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Volundir Application</title>
     <link rel="manifest" href="/manifest.json">
-    <link id="splash-screen" rel="stylesheet" type="text/css" href="/app/assets/css/splash-screen.css">
+    <link id="splash-screen-css" rel="stylesheet" type="text/css" href="/app/assets/css/splash-screen.css">
   </head>
   <body class="app-body">
-    <div  id="main-app-container" class="main-app-container"></div>
+    <div id="main-app-container" class="main-app-container"></div>
 
     <div id="splash-screen" class="splash-screen">
-      <div class="spinner-container-gear">
-        <img class="spinner-gear" src="/app/assets/images/spinner-gear.svg" alt="Loading..." />
 
+      <div class="gears-container">
+        <div class="spinner-container-gear">
+          <img class="spinner-gear" src="/app/assets/images/spinner-gear.svg" alt="Loading Volundir Application..." />
+        </div>
         <div class="loading-panel">
           <div class="loading-title">Initializing...</div>
           <div class="loading-item"></div>
         </div>
       </div>
 
-      <div class="loading-container">
-        <img class="loading-logo" class="loading-logo" src="/favicon.ico" alt="Loading..." />
-
+      <div class="pulse-container">
+        <div class="pulse-container-logo">
+          <img class="loading-logo" src="/favicon.ico" alt="Loading Volundir Application..." />
+        </div>
         <div class="loading-panel">
           <div class="loading-title">Initializing...</div>
           <div class="loading-item"></div>
@@ -31,6 +34,5 @@
     </div>
 
     <script type="module" src="/app.js"></script>
-
   </body>
 </html>

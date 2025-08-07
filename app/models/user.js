@@ -1,8 +1,15 @@
 import { Application } from './application.js';
 
 export class User extends Application {
-  static get resourceName() {
-    return 'users';
+  constructor(attributes = {}) {
+    super();
+
+    this.attributes = attributes;
+
+    // Model storage adapter used to save module data
+    this.storageAdapter  = 'json';
+    // this.resourceName    = 'configurations';
+    this.requiredModules = ['storage'];
   }
 
   validate() {

@@ -1,0 +1,24 @@
+{
+  "application_name": "Volundir SPA Demo",
+  "storage": "json",
+  "auto_load_models": ["user", "sessions"],
+  "interface": {
+    "adapter": "volundir",
+    "code": "vld",
+    "layouts": {
+      "main": "application",
+      "phone": "phone",
+      "tablet": "tablet"
+    }
+  },
+  "startUpInitLevel": "appReady",
+  "logger": {
+    "core": "debugger",
+    "controllers": "debugger",
+    "models": "debugger",
+    "views": "debugger",
+    "integrations": "debugger",
+    "interface": "debugger",
+    "storage": "debugger"
+  }
+}

@@ -1,6 +1,6 @@
 const CACHE_NAME = 'v1';
 
-console.log(' [sw] Starting...');
+// console.log(' [sw] Starting...');
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
