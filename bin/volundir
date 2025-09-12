@@ -1,38 +1,29 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-APP_NAME=$2
-PROFILE="default"
+# Volundir Development Server Launcher
+# Reads .env and starts the chosen backend
+# See .env.spec for general options
 
-# parse argumentos do tipo profile=default
-for ARG in "$@"; do
-  case $ARG in
-    profile=*)
-      PROFILE="${ARG#*=}"
-      ;;
-  esac
-done
+set -e
 
-echo ">> Criando app: $APP_NAME com profile: $PROFILE"
-
-# verifica se profile existe
-PROFILE_FILE="profiles/${PROFILE}.json"
-if [ ! -f "$PROFILE_FILE" ]; then
-  echo "Erro: Profile '$PROFILE' não encontrado."
-  exit 1
+# Load .env if it exists
+if [ -f ".env" ]; then
+  export $(grep -v '^#' .env | xargs)
 fi
 
-# cria a pasta do app
-mkdir -p "$APP_NAME"
+BACKEND=${BACKEND:-ruby}
+PORT=${PORT:-3020}
 
-# copia esqueleto
-cp -r templates/skel/. "$APP_NAME/"
+echo "Starting Volundir development server..."
+echo "Backend: $BACKEND"
+echo "Port: $PORT"
 
-# lê módulos builtin do profile
-BUILTINS=$(jq -r '.builtin[]' "$PROFILE_FILE")
-
-for MODULE in $BUILTINS; do
-  echo ">> Copiando módulo: $MODULE"
-  cp -r "modules/$MODULE" "$APP_NAME/$MODULE"
-done
-
-echo ">> Aplicação '$APP_NAME' criada com sucesso!"
+case "$BACKEND" in
+  ruby)
+    ruby ./lib/volundir/server/ruby/server.rb
+    ;;
+  *)
+    echo "Unknown backend: $BACKEND"
+    exit 1
+    ;;
+esac

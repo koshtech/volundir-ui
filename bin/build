@@ -35,7 +35,6 @@ chmod +x "$BIN_DIR/schedule"
 cp "$TEMPLATE_DIR/send_mail.sh" "$SCRIPTS_DIR/send_mail.sh"
 chmod +x "$SCRIPTS_DIR/send_mail.sh"
 
-
 echo "Aplicação '$APP_NAME' criada com sucesso em '$BASE_DIR'"
 echo "Para instalar o crontab:"
 echo "  crontab $BASE_DIR/crontab.txt"

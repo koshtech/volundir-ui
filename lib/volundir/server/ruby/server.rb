@@ -2,6 +2,7 @@
 
 require 'webrick'
 require 'logger'
+# require 'ruby-fake-api'
 
 PORT       = 3020
 DOC_ROOT   = Dir.pwd
@@ -18,10 +19,25 @@ server = WEBrick::HTTPServer.new(
   Logger: WEBrick::Log.new(nil, 0)
 )
 
-# Lida com arquivos estáticos normalmente
 server.mount('/', WEBrick::HTTPServlet::FileHandler, DOC_ROOT)
 
-# Lida com rotas SPA (qualquer path sem ponto, ou com PUT/DELETE/etc)
+# API routing
+server.mount_proc '/api/' do |req, res|
+  path = req.path.sub('/api/', '')
+  res['Content-Type'] = 'application/json'
+
+  case path
+  when 'hello'
+    res.body = { message: 'Hello from Ruby backend' }.to_json
+  when 'time'
+    res.body = { time: Time.now.iso8601 }.to_json
+  else
+    res.status = 404
+    res.body = { error: 'Not Found' }.to_json
+  end
+end
+
+# App routing
 server.mount_proc('/') do |req, res|
   path = req.path
 
@@ -31,12 +47,10 @@ server.mount_proc('/') do |req, res|
 
   static_file = File.join(DOC_ROOT, path)
 
-  # Se for um arquivo com extensão (ex: .js, .css, .png), não redireciona para index
   if path.match(/\.\w+$/) && File.exist?(static_file)
-    # Deixe o WEBrick lidar com isso
+    # sleep(1)
     WEBrick::HTTPServlet::FileHandler.new(server, DOC_ROOT).service(req, res)
   else
-    # SPA: devolve index.html
     index_path = File.join(DOC_ROOT, INDEX_FILE)
     if File.exist?(index_path)
       res.body = File.read(index_path)
@@ -50,9 +64,9 @@ server.mount_proc('/') do |req, res|
 end
 
 trap('INT') do
-  puts "\nEncerrando servidor..."
+  puts "\Shutdown server..."
   server.shutdown
 end
 
-puts "Servidor SPA disponível em http://localhost:#{PORT}"
+puts "Volundir Ruby Development Server running at http://localhost:#{PORT}"
 server.start
