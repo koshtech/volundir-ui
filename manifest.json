@@ -1,15 +1,28 @@
 {
-  "name": "Volundir Kit Repository Manager",
-  "short_name": "VLDm",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
-  "icons": [
+  "theme_color":"#8936FF",
+  "background_color":"#2EC6FE",
+  "icons":[
     {
-      "src": "/favicon.ico",
-      "sizes": "256x256",
-      "type": "image/png"
+      "purpose":"maskable",
+      "sizes":"512x512",
+      "src":"icon512_maskable.png",
+      "type":"image/png"
+    },
+    {
+      "purpose":"any",
+      "sizes":"512x512",
+      "src":"icon512_rounded.png",
+      "type":"image/png"
     }
-  ]
+  ],
+  "orientation":"any",
+  "display":"standalone",
+  "dir":"auto",
+  "lang":"pt-BR",
+  "name":"Volundir App Framework",
+  "short_name":"Volundir Framework",
+  "start_url":"http://localhost:3020/",
+  "scope":"http://localhost:3020/",
+  "description":"Volundir UI is a lightweight and agnostic Vanilla JS framework designed to provide a Rails-style JavaScript application development experience.",
+  "id":"http://localhost:3020/"
 }
