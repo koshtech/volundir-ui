@@ -1,0 +1,14 @@
+{
+  "application_name": "Volundir SPA Demo",
+  "storage": "json_api",
+  "interface": "volundir",
+  "layouts": {
+    "main": "application",
+    "phone": "phone",
+    "tablet": "tablet"
+  },
+  "logger": {
+    "level": "debugger",
+    "target": "full"
+  }
+}

@@ -198,6 +198,46 @@ layout/
 └── application.html
 ```
 
+
+## 📘 Log System
+
+Os níveis de mensagem de log (ou severidade) são usados para categorizar a importância e o impacto dos eventos que ocorrem em um sistema ou aplicação. Isso ajuda os desenvolvedores e administradores a filtrar e analisar as informações relevantes. ￼
+
+Abaixo está a descrição de cada tipo solicitado:
+
+INFO (Informação): Utilizado para mensagens que destacam o progresso normal e esperado da aplicação. São eventos rotineiros, como o início ou fim de uma tarefa, o login de um usuário ou uma operação bem-sucedida. Geralmente, são úteis para monitoramento de alto nível.
+
+NOTICE (Aviso/Notificação): Similar ao INFO, mas geralmente indica eventos que são significativos, porém não representam um erro ou problema imediato. Pode ser usado para notificar sobre condições que merecem atenção, mas que o sistema pode lidar sem intervenção.
+
+WARN (Aviso/Warning): Indica a ocorrência de um evento potencialmente prejudicial ou inesperado que não impede a execução correta da aplicação no momento. Exemplos incluem o uso de uma funcionalidade obsoleta, um recurso que está próximo do seu limite ou uma falha de conexão temporária que será automaticamente retentada.
+
+ERROR (Erro): Usado para registrar problemas ou falhas que ocorreram e impediram a conclusão de uma operação ou tarefa específica. A aplicação ou parte dela pode continuar a funcionar, mas a ação em questão falhou. Requer investigação para entender a causa raiz e evitar recorrências.
+
+FATAL (Fatal/Crítico): O nível de severidade mais alto. Indica um erro gravíssimo que causou (ou causará) a interrupção total da
+aplicação, do serviço ou do sistema. O sistema não consegue mais operar de forma confiável ou continuar a execução.
+
+DEBUG (Depuração): Contém informações detalhadas, geralmente úteis apenas para desenvolvedores durante a fase de desenvolvimento ou solução de problemas (depuração). Inclui detalhes técnicos granulares, como valores de variáveis, chamadas de função e passos de execução, que seriam excessivos em um ambiente de produção normal.
+
+Sucesso: Confirmam que uma operação foi concluída com sucesso.
+
+Atividade: Descrevem fluxos de mensagens e a interação com recursos externos.
+
+
+O que os logs registram
+
+Quem acessou o sistema e quando: Registra quem fez login e em que momento.
+Ações realizadas: Documenta quais arquivos foram abertos e quais alterações foram feitas.
+Eventos e processos: Mantém um registro de todas as operações e eventos que ocorreram.
+Dados descritivos: Inclui informações contextuais como carimbos de data/hora para ajudar na análise de incidentes. ￼
+
+Finalidades dos logs
+
+Diagnóstico e monitoramento: Ajudam a identificar problemas e a acompanhar o desempenho de um sistema.
+Segurança: Permitem monitorar atividades suspeitas e proteger a rede contra ameaças.
+Conformidade: São essenciais para atender a requisitos regulamentares em diversas indústrias.
+Análise de incidentes: Fornecem um registro detalhado de ações antes de um incidente para ajudar a investigar a causa.
+Otimização de performance: Auxiliam na identificação de gargalos e na melhoria da eficiência do sistema.
+
 ---
 
 ## 📘 License

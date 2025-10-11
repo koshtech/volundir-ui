@@ -1,0 +1,76 @@
+.vgp {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  height: 250px;
+  background: #111;
+  color: #ddd;
+  border-top-left-radius: 8px;
+  /*font-family: monospace;*/
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  z-index: 99999;
+}
+
+.vgp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+}
+
+.vgp-header .vgp-button:first-of-type {
+  margin-left: auto;
+}
+
+.vgp-title {
+  font-size: 8px; /* seu valor original */
+  font-weight: bold;
+}
+
+.vgp-actions {
+  display: flex;
+  gap: 4px; /* espaçamento entre botões */
+}
+
+.vgp-button {
+  cursor: pointer;
+}
+
+.vgp-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px;
+}
+
+.vgp-log-entry {
+  margin-bottom: 0px;
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.vgp-log-entry span {
+  /*display: block;*/
+}
+
+.vgp-log-level {
+  color: #0dff14;
+}
+
+.vgp-log-file {
+  color: #fbff0d;
+}
+
+.vgp-log-class {
+  color: #6cf;
+}
+
+.vgp-log-method {
+  color: #9f6;
+}
+
+.vgp-log-message {
+  color: #ddd;
+}

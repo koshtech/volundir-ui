@@ -1,0 +1,27 @@
+{
+  "application_name": "Volundir SPA Demo",
+  "storage": ["browser", "json", "rest", "xml"],
+  // "auto_load_models": ["user", "sessions"],
+  "interface": ["volundir", "bootstrap-5.3.0"],
+  "layouts": {
+    "main": "application",
+    "phone": "phone",
+    "tablet": "tablet"
+  },
+  "logger": {
+    "level": ["info", "notice", "warn", "error", "debugger"],
+    "target": [
+      "full",
+      "base",
+      "extensions",
+      "modules",
+      "hubs",
+      "storage",
+      "integrations",
+      "interface",
+      "controllers",
+      "models",
+      "views"
+    ]
+  }
+}

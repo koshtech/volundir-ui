@@ -7,10 +7,14 @@ self.addEventListener('install', (e) => {
     caches.open(CACHE_NAME).then((cache) =>
       cache.addAll([
         '/',
-        '/index.html',
         '/manifest.json',
+        '/index.html',
+        '/favicon.ico',
         '/lib/volundir/config/boot.js',
-        '/app.js'
+        '/app.js',
+        '/icon512_maskable.png',
+        '/icon512_rounded.png',
+        '/icon245.png'
       ])
     )
   );

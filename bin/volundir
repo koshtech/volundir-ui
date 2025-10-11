@@ -20,7 +20,7 @@ echo "Port: $PORT"
 
 case "$BACKEND" in
   ruby)
-    ruby ./lib/volundir/server/ruby/server.rb
+    ruby ./lib/volundir/lib/server/ruby/server.rb
     ;;
   *)
     echo "Unknown backend: $BACKEND"
