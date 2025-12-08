@@ -1,11 +1,40 @@
-export class PanelController {
+import { BaseController } from '/lib/volundir/base/base_controller.js';
+
+export class PanelController extends BaseController {
   constructor() {
+    super();
+
     this.container = null;
     this.logs = [];
+
+    this.selectedInterfaceAdapter = null;
+    this.selectedInterfaceCode    = null;
+
+    this.defaultTemplatesPath  = `/vendor/mapps/guilda/views`;
+    this.defaultStylePath      = `/vendor/mapps/guilda/assets/stylesheets`;
+    this.selectedLayout        = 'mapplication';
+    this.selectedLayoutPath    = `layouts/${this.selectedLayout}`;
+
+    this.baseTemplatesPath  = null;
   }
 
-  init() {
-    this.container = document.getElementById("volundir-guilda-panel");
+  async init() {
+    this.selectedInterfaceAdapter = this.modules.render.getSelectedInterfaceAdapter();
+    this.selectedInterfaceCode    = this.modules.render.getSelectedInterfaceCode();
+
+    this.baseTemplatesPath  = this.baseTemplatesPath || `${this.defaultTemplatesPath}/${this.selectedInterfaceCode}`;
+
+    this.modules.render.loadStylesheet('style.css', this.defaultStylePath);
+
+    this.container = await this.modules.render.find_or_create_element_from_template(
+      'volundir-guilda-panel',
+      this.selectedLayoutPath,
+      this.baseTemplatesPath,
+      { class: 'vgp' }
+    );
+
+    Log.debugger(' [init] this.container:', this.container);
+
     if (!this.container) return;
 
     const toggleBtn = this.container.querySelector(".vgp-button-toggle");
@@ -26,13 +55,14 @@ export class PanelController {
   }
 
   addLog(entry) {
+    console.log(' ==> log controller called');
     this.logs.push(entry);
     if (!this.logContainer) return;
 
     const div = document.createElement("div");
     div.classList.add("vgp-log-entry");
     div.innerHTML = `
-      <span class="vgp-log-file">[<span class="vgp-log-level">${entry.level}</span>] ${entry.file}:${entry.line}:${entry.column} <span class="vgp-log-class">${entry.class}.${entry.method}()</span></span>
+      [<span class="vgp-log-level-${entry.level}">${entry.level}</span>] <span class="vgp-log-file">${entry.file}:${entry.line}:${entry.column} <span class="vgp-log-class">${entry.class}.${entry.method}()</span></span>
       <span class="vgp-log-message">${entry.message}</span>
 
     `;
@@ -41,10 +71,10 @@ export class PanelController {
   }
 }
 
-export const GuildaPanel = new PanelController();
+// export const GuildaPanel = new PanelController();
 
-GuildaPanel.init();
+// GuildaPanel.init();
 
 // Global instance (singleton)
-window.GuildaPanel = GuildaPanel;
+// window.GuildaPanel = GuildaPanel;
 // globalThis.Guilda = new GuildaModule();

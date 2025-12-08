@@ -7,14 +7,16 @@ export class GuildaModule extends BaseModule {
   constructor() {
     super();
 
-    this.requiredModules = ['render'];
+    this.requiredHandlers    = [];
+    this.requiredControllers = ['panel_controller'];
+    this.requiredModules     = ['render'];
 
-    (async () => this.init())();
+    // (async () => this.init())();
   }
 
   async init() {
-    console.log(' ===> this: ', this);
+    console.log(' ===> GuildaModule started! this: ', this);
+
+    await this.controllers.panel_controller.init();
   }
-
-
 }

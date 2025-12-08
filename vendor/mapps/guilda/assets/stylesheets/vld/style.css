@@ -55,9 +55,31 @@
   /*display: block;*/
 }
 
-.vgp-log-level {
+.vgp-log-level-info {
+  color: #ffffff;
+}
+.vgp-log-level-notice {
+  color: #ffa02b;
+}
+.vgp-log-level-warn {
+  color: #ebff47;
+}
+
+.vgp-log-level-success {
   color: #0dff14;
 }
+
+.vgp-log-level-error {
+  color: #fb6969;
+}
+.vgp-log-level-fatal {
+  color: #000000;
+  background-color: #ffffff;
+}
+.vgp-log-level-debugger {
+  color: #ff72da;
+}
+
 
 .vgp-log-file {
   color: #fbff0d;

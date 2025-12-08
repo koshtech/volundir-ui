@@ -1,4 +1,4 @@
-// import { Coordinator } from '/lib/volundir/core/coordinator.js';
+// import { Coordinator } from '/lib/volundir/base/object_coordinator.js';
 import { Application } from '/app/controllers/application_controller.js';
 
 export class Sessions extends Application {

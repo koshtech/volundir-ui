@@ -1,18 +1,27 @@
 console.log(' ==============>>>>> guildaApp load ');
 
-import { GuildaModule } from '/vendor/mapps/guilda/modules/guilda_module.js';
-
-// globalThis.Guilda = new GuildaModule();
-
-// if enabled by configuration
-import { panel_handler } from '/vendor/mapps/guilda/handlers/panel_handler.js';
-
 // if enabled by configuration
 import { PanelController } from '/vendor/mapps/guilda/controllers/panel_controller.js';
 
-export const mApp = {
-  "controllers": [PanelController],
-  "modules": [GuildaModule],
+export const GuildaPanel  = new PanelController();
+globalThis.GuildaPanel = GuildaPanel;
+
+// if enabled by configuration
+await import('/vendor/mapps/guilda/handlers/panel_handler.js');
+
+import { GuildaModule } from '/vendor/mapps/guilda/modules/guilda_module.js';
+
+
+// globalThis.Guilda = new GuildaModule();
+export const guilda = {
+  "handlers": [],
   "models": [],
-  "handlers": [panel_handler]
+  "controllers": [GuildaPanel],
+  "modules": [new GuildaModule]
 };
+
+
+// GuildaPanel.init();
+
+// Global instance (singleton)
+// globalThis.Guilda = new GuildaModule();
