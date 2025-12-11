@@ -33,7 +33,7 @@ export class PanelController extends BaseController {
       { class: 'vgp' }
     );
 
-    Log.debugger(' [init] this.container:', this.container);
+    Logger.debugger(' [init] this.container:', this.container);
 
     if (!this.container) return;
 
@@ -52,10 +52,12 @@ export class PanelController extends BaseController {
     });
 
     this.logContainer = logContainer;
+
+    await Logger.updateHandler('panel_handler');
   }
 
   addLog(entry) {
-    console.log(' ==> log controller called');
+    // console.log(' ==> log controller called');
     this.logs.push(entry);
     if (!this.logContainer) return;
 
