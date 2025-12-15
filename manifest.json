@@ -1,10 +1,10 @@
 {
-  "id": "http://localhost:3020/",
+  // "id": "http://localhost:3020/",
   "name":"Volundir App Framework",
   "short_name":"Volundir Framework",
   "description":"Volundir UI is a lightweight and agnostic Vanilla JS framework designed to provide a Rails-style JavaScript application development experience.",
-  "start_url":"http://localhost:3020/",
-  "scope":"http://localhost:3020/",
+  // "start_url":"http://localhost:3020/",
+  // "scope":"http://localhost:3020/",
   "display":"standalone",
   "display_override": ["standalone", "minimal-ui", "browser"],
   "orientation":"any",

@@ -1,6 +1,5 @@
-Logger.registerHandler((entry) => {
+Logger.registerHandler('guida_panel_handler', (entry) => {
   if (GuildaPanel && typeof GuildaPanel.addLog === "function") {
-    console.log(' ===> GuildaPanel.addLog: ', entry);
     GuildaPanel.addLog(entry);
   }
 });
