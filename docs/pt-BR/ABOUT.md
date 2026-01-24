@@ -1,0 +1,3 @@
+# Völundr
+
+Völundr é o ferreiro élfico por excelência: um gênio técnico isolado, obcecado pela perfeição do ofício. Vive entre elfos, casa-se com uma valquíria que o abandona, e mais tarde é capturado por um rei humano que o escraviza para explorar sua habilidade. Mutilado para não fugir, Völundr pivota a dor em estratégia: transforma vingança em obra-prima, usando engenho, paciência e crueldade cirúrgica. No fim, escapa voando graças a uma criação própria. Ele não vence pela força, mas pela superioridade técnica e pela visão de longo prazo. Um case clássico de talento subestimado com mindset implacável.

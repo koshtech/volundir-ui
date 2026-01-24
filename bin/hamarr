@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Volundir Ingot Package Management Tool
+#
+# Proposed uses:
+#
+# hamarr install module-render    => lib/volundir/lib/modules/render_module.js
+# hamarr install storage-json     => lib/volundir/lib/adapters/storage/json/adapter.js
+# hamarr install integration-kzip => lib/volundir/lib/integrations/address_and_location/kzip/NAME.js
+# hamarr install mapp-guilda      => vendor/mapps/guilda/
+#
