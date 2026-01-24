@@ -1,0 +1,8 @@
+{
+  "NAME": "GUIlda",
+  "DESCRIPTION": "A Developer Panel in an Embedded Mini Aplication",
+  "DEPENCENCIES": [],
+  "PROVIDE": ["mapps"],
+  "OBJECTTYPE": "mapps",
+  "VERSION": "0.0.1-c55"
+}

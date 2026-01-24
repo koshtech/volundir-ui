@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
-# Volundir Ingot Package Management Tool
+# Hmarr - Volundir Ingot Package Management Tool
+#
+# Hamarr means "hammer" in Old Norse.
+#
+# Perfect semantics:
+#
+# - The hammer is not the product, but the means;
+# - Simple, short, and easy to use in the chain of command;
+# - Silent authority.
 #
 # Proposed uses:
 #

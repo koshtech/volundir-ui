@@ -2,9 +2,9 @@ import { getAuthHeaders } from '/lib/volundir/base/auth.js';
 // import { System } from '/lib/volundir/core/system.js';
 // import { User } from '/app/models/user.js';
 // import { Coordinator } from '/lib/volundir/base/object_coordinator.js';
-import { Application } from '/app/controllers/application_controller.js';
+import { ApplicationController } from '/app/controllers/application_controller.js';
 
-export class SiteController extends Application {
+export class SiteController extends ApplicationController {
   constructor () {
     super();
 

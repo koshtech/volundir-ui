@@ -1,8 +1,8 @@
 import { BaseController } from '/lib/volundir/base/base_controller.js';
 
-export class Application extends BaseController {
-  constructor (_modules) {
-    super(_modules);
+export class ApplicationController extends BaseController {
+  constructor () {
+    super();
 
     this.data = {};
   }
