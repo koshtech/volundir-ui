@@ -8,4 +8,4 @@ export class ApplicationController extends BaseController {
   }
 }
 
-console.log('Loaded Application Controller');
+// console.log('Loaded Application Controller');

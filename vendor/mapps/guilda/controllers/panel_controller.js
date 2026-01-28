@@ -8,10 +8,12 @@ export class PanelController extends BaseController {
   }
 
   async index() {
-    // console.log(' [PanelController][init] final this: ', this);
+    console.log(' [PanelController][index] this: ', this);
   }
 
   addLog(entry) {
     this.modules['guilda_module'].addLog(entry)
+    // console.log(' [PanelController][addLog] entry: ', entry);
+    // console.log(' [PanelController][addLog] this: ', this);
   }
 }

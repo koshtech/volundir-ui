@@ -8,7 +8,7 @@ export class GuildaModule extends BaseModule {
     this.requiredHandlers    = [];
     // this.requiredControllers = ['panel_controller'];
     this.requiredModules     = ['render', 'timer'];
-    this.requiredModels      = ['logger_model'];
+    // this.requiredModels      = ['logger_model'];
 
     this.container = null;
 
