@@ -3,12 +3,13 @@ import { BaseController } from '/lib/volundir/base/base_controller.js';
 export class PanelController extends BaseController {
   constructor() {
     super();
+
     this.requiredModules = ['guilda_module'];
     // this.requiredModels  = ['logger_model', 'config_model', 'object_register_model'];
   }
 
   async index() {
-    console.log(' [PanelController][index] this: ', this);
+    // console.log(' [PanelController][index] this: ', this);
   }
 
   addLog(entry) {

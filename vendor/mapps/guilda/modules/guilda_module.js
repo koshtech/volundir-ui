@@ -42,7 +42,7 @@ export class GuildaModule extends BaseModule {
       { class: 'vgp' }
     );
 
-    Logger.debugger('GuildaModule started.');
+    log.debugger('GuildaModule started.');
 
     if (!this.container) return;
 
