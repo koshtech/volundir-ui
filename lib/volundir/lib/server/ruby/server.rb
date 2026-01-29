@@ -2,7 +2,8 @@
 
 require 'webrick'
 require 'logger'
-# require 'ruby-fake-api'
+require 'json'
+require 'time'
 
 PORT       = 3020
 DOC_ROOT   = Dir.pwd
@@ -19,11 +20,16 @@ server = WEBrick::HTTPServer.new(
   Logger: WEBrick::Log.new(nil, 0)
 )
 
-server.mount('/', WEBrick::HTTPServlet::FileHandler, DOC_ROOT)
+# --------------------
+# Static files
+# --------------------
+server.mount('/assets', WEBrick::HTTPServlet::FileHandler, DOC_ROOT)
 
+# --------------------
 # API routing
-server.mount_proc '/api/' do |req, res|
-  path = req.path.sub('/api/', '')
+# --------------------
+server.mount_proc '/api' do |req, res|
+  path = req.path.sub(%r{^/api/?}, '')
   res['Content-Type'] = 'application/json'
 
   case path
@@ -37,36 +43,49 @@ server.mount_proc '/api/' do |req, res|
   end
 end
 
-# App routing
-server.mount_proc('/') do |req, res|
+# --------------------
+# App / Root routing
+# --------------------
+server.mount_proc '/' do |req, res|
   path = req.path
 
   log.info "[#{req.request_method}] #{path}"
-  log.debug "Headers: #{req.header.inspect}"
-  log.debug "Body: #{req.body}" unless req.body.nil? || req.body.empty?
 
+  # Root → index.html
+  if path == '/'
+    index_path = File.join(DOC_ROOT, INDEX_FILE)
+
+    if File.exist?(index_path)
+      res.status = 200
+      res['Content-Type'] = 'text/html'
+      res.body = File.read(index_path)
+    else
+      res.status = 500
+      res.body = 'index.html not found'
+    end
+
+    next
+  end
+
+  # real static file
   static_file = File.join(DOC_ROOT, path)
 
-  if path.match(/\.\w+$/) && File.exist?(static_file)
-    # sleep(1)
-    WEBrick::HTTPServlet::FileHandler.new(server, DOC_ROOT).service(req, res)
-  else
-    index_path = File.join(DOC_ROOT, INDEX_FILE)
-    if File.exist?(index_path)
-      res.body = File.read(index_path)
-      res['Content-Type'] = 'text/html'
-      res.status = 200
-    else
-      res.status = 404
-      res.body = "404 Not Found"
-    end
+  if path.match?(/\.\w+$/) && File.file?(static_file)
+    WEBrick::HTTPServlet::FileHandler
+      .new(server, DOC_ROOT)
+      .service(req, res)
+    next
   end
+
+  # any other case, return 404
+  res.status = 404
+  res['Content-Type'] = 'text/plain'
+  res.body = '404 Not Found'
 end
 
 trap('INT') do
-  puts "\Shutdown server..."
+  puts "\nShutdown server..."
   server.shutdown
 end
 
-puts "Volundir Ruby Development Server running at http://localhost:#{PORT}"
 server.start
