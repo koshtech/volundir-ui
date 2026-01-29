@@ -1,4 +1,4 @@
-import { ApplicationController } from '/app/controllers/application_controller.js';
+// import { ApplicationController } from '/app/controllers/application_controller.js';
 
 export class Sessions extends ApplicationController {
   login() {
