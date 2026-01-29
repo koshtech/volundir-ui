@@ -12,7 +12,8 @@ export class SiteController extends ApplicationController {
   }
 
   index() {
-    console.log("Método index do SiteController");
+    console.log('[SiteController][index] this: ', this);
+    console.log('[SiteController][index] Coordinator: ', Coordinator);
 
     this.data = {
         user: {
@@ -24,7 +25,7 @@ export class SiteController extends ApplicationController {
         user_loggedin: this.user_loggedin()
     };
 
-    console.log('returned data: ', this.data);
+    console.log('[SiteController][index] returned data: ', this.data);
 
     return this.data;
   }

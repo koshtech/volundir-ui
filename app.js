@@ -1,5 +1,8 @@
 import { Volundir } from '/lib/volundir/base/volundir.js';
 
-var App = new Volundir();
+if (!globalThis.VolundirApp) {
+  const app = new Volundir();
+  await app.init();
 
-// App.run();
+  globalThis.VolundirApp = app;
+}
