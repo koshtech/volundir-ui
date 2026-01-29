@@ -1,5 +1,3 @@
-// import { ApplicationController } from '/app/controllers/application_controller.js';
-
 export class Sessions extends ApplicationController {
   login() {
     sessionStorage.setItem('auth', true);
