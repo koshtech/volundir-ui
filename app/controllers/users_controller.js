@@ -1,4 +1,4 @@
-export class Users extends ApplicationController {
+export class UsersController extends ApplicationController {
   constructor () {
     super();
 

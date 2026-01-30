@@ -1,4 +1,4 @@
-export class Sessions extends ApplicationController {
+export class SessionsController extends ApplicationController {
   login() {
     sessionStorage.setItem('auth', true);
     console.log(" [SessionsController][login]", this);
