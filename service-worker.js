@@ -1,21 +1,21 @@
 const CACHE_NAME = 'v1';
 
-// console.log(' [sw] Starting...');
+const caching_files = [
+  '/',
+  '/manifest.json',
+  '/index.html',
+  '/favicon.ico',
+  '/lib/volundir/config/boot.js',
+  '/app.js',
+  '/icon512_maskable.png',
+  '/icon512_rounded.png',
+  '/icon256.png'
+];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
-      cache.addAll([
-        '/',
-        '/manifest.json',
-        '/index.html',
-        '/favicon.ico',
-        '/lib/volundir/config/boot.js',
-        '/app.js',
-        '/icon512_maskable.png',
-        '/icon512_rounded.png',
-        '/icon245.png'
-      ])
+      cache.addAll(caching_files)
     )
   );
 });
