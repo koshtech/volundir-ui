@@ -1,0 +1,5 @@
+{
+  "admin": ["users.create", "users.delete", "settings.access"],
+  "editor": ["posts.create", "posts.update"],
+  "viewer": ["posts.read"]
+}

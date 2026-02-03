@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/koshtech/ruby_fake_api.git
+  revision: 2becfaadaa3b6ce2ea1858a758a05acac9163354
+  specs:
+    ruby_fake_api (0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -10,6 +16,7 @@ PLATFORMS
 
 DEPENDENCIES
   logger
+  ruby_fake_api!
   webrick
 
 BUNDLED WITH

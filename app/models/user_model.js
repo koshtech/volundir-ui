@@ -1,6 +1,4 @@
-import { Application } from './application.js';
-
-export class User extends Application {
+export class UserModel extends ApplicationModel {
   constructor(attributes = {}) {
     super();
 

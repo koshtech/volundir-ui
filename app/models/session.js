@@ -1,6 +1,4 @@
-import { Application } from './application.js';
-
-export class Session extends Application {
+export class SessionModel extends ApplicationModel {
   // static get resourceName() {
   //   return 'users';
   // }

@@ -2,7 +2,7 @@
   "default": "my_json_api",
   "my_json_api": {
     "type": "json",
-    "url": "http://localhost:3030/fake_api",
+    "url": "http://127.0.0.1:3020/api/fake",
     "headers": {
       "content-type": "application/json",
       "accept": "application/json",

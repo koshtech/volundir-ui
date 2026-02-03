@@ -1,6 +1,4 @@
-import { Application } from './application.js';
-
-export class Country extends Application {
+export class CountryModel extends ApplicationModel {
   static get resourceName() {
     return 'countries';
   }

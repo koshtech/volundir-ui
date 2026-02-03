@@ -3,18 +3,21 @@ export class UsersController extends ApplicationController {
     super();
 
     this.data = {};
+    this.requiredModels = ['user']
   }
 
   async index() {
-    const headers = {
-      ...getAuthHeaders(), 'Content-Type': 'application/json'
-    };
+    console.log('[UsersController][index] this: ', this);
+    // const headers = {
+    //   ...getAuthHeaders(), 'Content-Type': 'application/json'
+    // };
 
-    let user  = await User.find(2);
-    let users = await User.all();
+    let user  = await this.models.user.find(2);
+    let users = await this.models.user.all();
     let first = users.first();
     let last  = users.last();
 
+    console.log('[UsersController][index] user: ', user);
     this.data = {
         user: user,
         users: users.toArray(),
@@ -27,7 +30,7 @@ export class UsersController extends ApplicationController {
   }
 
   new(_data={}) {
-    console.log('==>> new# data: ', _data);
+    console.log('[UsersController] data: ', _data);
     // let user = _data['user'] ? _data['user'] : {};
     let user = _data;
 
