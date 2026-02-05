@@ -2,6 +2,9 @@
   "/":         "site/index",
   "/site":     "site/index",
 
+  "/devices": "devices/index",
+  "/devices/request_bluetooth_permission": "devices/request_bluetooth_permission",
+
   "/login":    "sessions/login",
   "/register": "sessions/register",
   "/forgot":   "sessions/forgot",

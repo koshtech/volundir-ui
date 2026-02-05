@@ -1,0 +1,68 @@
+@import url("../icons/unicode-icons-status.css");
+
+/* Frame definitions  */
+
+.flash {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: opacity 0.3s ease;
+}
+
+.flash .flash-icon {
+  font-size: 0.5rem;
+}
+
+.flash .flash-message {
+  flex: 1;
+  font-size: 0.5rem;
+}
+
+.flash .flash-close {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: inherit;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+}
+
+/* Messages types */
+
+.flash.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.flash.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.flash.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.flash.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.flash-icon::before {
+  display: inline-block;
+  margin-right: 0.5rem;
+}

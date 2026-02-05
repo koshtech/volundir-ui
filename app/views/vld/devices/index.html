@@ -1,0 +1,39 @@
+{{if user_loggedin == 'true'}}
+  <h1 class="mb-3">Loggedin as {{user.name}}.</h1>
+{{endif}}
+
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-title">
+          System Devices
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="card-body page-content">
+          <h3 class="mb-3">System informations</h3>
+
+          <h4 class="mb-2">Network</h4>
+
+          <h5 class="mb-2">Bluetooth</h5>
+            <p class="mb-0 small">Permitted access: <b>{{bluetooth.permitted}}</b></p>
+          {{if bluetooth.permitted == false }}
+            <p class="mb-0 small">
+              User must be request for for permission:
+              [<b><a id="action-request-bluetooth-permission" href="/devices/request_bluetooth_permission">request bluetooth access permission</a></b>]
+            </p>
+          {{else}}
+            <p class="mb-0 small">state: <b>{{bluetooth.state}}</b></p>
+            <p class="mb-0 small">availability: <b>{{bluetooth.availability}}</b></p>
+            <p class="mb-0 small">devices: <b>{{bluetooth.devices}}</b></p>
+          {{endif}}
+        </div>
+        <div class="card-footer">
+          Bluetooth: <b>{{bluetooth.state}}</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Location on server: /app/views/vld/site/index.html</p>

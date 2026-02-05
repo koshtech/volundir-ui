@@ -197,6 +197,46 @@ Help identify bottlenecks and improve system efficiency.
 
 ---
 
+## Troubleshooting
+
+### Unexpected Load Errors:
+
+ Problem: Your Volundir System is working fine. But, after you create a new module/controller/model or any other component, the system crashes showing some error message like this in console and/or system logs:
+
+  [Coordinator][loadModule] Error loading object:  devices  error:  TypeError: Cannot create property 'resolved' on boolean 'false' (object_coordinator.js:251)
+    at ObjectCoordinator.updateDependencies (object_coordinator.js:221:29)
+    at ObjectCoordinator.loadObject (object_coordinator.js:243:36)
+    at async RouterModule.processControllerAction (21395c51-a079-40dc-84f2-f9f6b474d0c3:136:33)
+    at async RouterModule.executeInternalAction (21395c51-a079-40dc-84f2-f9f6b474d0c3:100:19)
+
+
+   Error explanation: In the above example, a new created controller causes an error in the `ObjectCoordinator.updateDependencies`, caused by a syntax error in index action:
+
+```
+     index() {
+      console.log('[DevicesController][index] this: ', this);
+      console.log('[DevicesController][index] Coordinator: ', Coordinator);
+
+
+        this.data = {
+            bluetooth: {
+                state: 'Faked OK',
+                availability: 'Faked Available'
+                devices: '[aked Device 1]              <= The closing ' are missing here, causing a syntax error.
+            }
+        }
+
+      console.log('[DevicesController][index] returned data: ', this.data);
+
+      return this.data;
+    }
+```
+
+  This syntax error, stops the loading proccess raising a fatal error.
+
+  Solution: If some like this happens to you, just back your steps and look for a syntax errors, missing parent extends or dependency files.
+
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
