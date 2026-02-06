@@ -15,5 +15,3 @@ export class SessionModel extends ApplicationModel {
   //   };
   // }
 }
-
-console.log('Loaded User Model')

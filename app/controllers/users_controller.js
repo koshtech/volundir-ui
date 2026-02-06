@@ -18,6 +18,7 @@ export class UsersController extends ApplicationController {
     let last  = users.last();
 
     console.log('[UsersController][index] user: ', user);
+    console.log('[UsersController][index] users: ', users);
     this.data = {
         user: user,
         users: users.toArray(),

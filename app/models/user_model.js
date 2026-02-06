@@ -22,5 +22,3 @@ export class UserModel extends ApplicationModel {
     };
   }
 }
-
-console.log('Loaded User Model')
