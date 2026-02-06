@@ -1,4 +1,4 @@
-/*@import url("unicode-icons-status.css");*/
+@import url("./unicode-icons-status.css");
 
 .icon::before {
   display: inline-block;
@@ -7,4 +7,8 @@
 
 .icon.user::before {
   content: '👤';
+}
+
+.icon.hourglass::before{
+  content: '⌛';
 }
