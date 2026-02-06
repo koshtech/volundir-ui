@@ -9,6 +9,30 @@
   content: '👤';
 }
 
-.icon.hourglass::before{
+.icon.hourglass::before {
   content: '⌛';
+}
+
+.icon.working::before {
+  content: '⚒️';
+}
+
+.icon.gears::before {
+  content: '⚙️';
+}
+
+.icon.screw::before {
+  content: '🔩';
+}
+
+.icon.crane::before {
+  content: '🏗️';
+}
+
+.icon.hammer::before {
+  content: '🔨';
+}
+
+.icon.question::before {
+  content: '❓';
 }

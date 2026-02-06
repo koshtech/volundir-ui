@@ -17,10 +17,10 @@
 
 .icon.info::before,
 .flash-icon.info::before {
-  content: 'ℹ️';
+  content: '🔔';
 }
 
 .icon.warning::before,
 .flash-icon.warning::before {
-  content: '⚠️';
+  content: '❗';
 }
