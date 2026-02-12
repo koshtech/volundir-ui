@@ -4,6 +4,10 @@ export class UsersController extends ApplicationController {
 
     this.data = {};
     this.requiredModels = ['user']
+
+    this.models = {
+      user: new User()
+    }
   }
 
   async index() {
