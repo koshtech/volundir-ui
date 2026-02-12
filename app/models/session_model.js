@@ -1,3 +1,5 @@
+const ApplicationModel = await File.import('app/models/application_model.js');
+
 export class SessionModel extends ApplicationModel {
   // static get resourceName() {
   //   return 'users';

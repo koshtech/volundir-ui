@@ -1,3 +1,7 @@
+const StorageModule = await File.import('lib/volundir/lib/modules/storage_module.js')
+
+const ApplicationModel = await File.import('app/models/application_model.js');
+
 export class UserModel extends ApplicationModel {
   constructor(attributes = {}) {
     super();

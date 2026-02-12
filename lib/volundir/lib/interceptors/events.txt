@@ -1,0 +1,51 @@
+Mouse Events
+
+These events relate to user interactions with a mouse or pointing device.
+
+    • click: A button is clicked (or enter is pressed while focused).
+    • dblclick: A button is double-clicked.
+    • mousedown: A mouse button is pressed down over an element.
+    • mouseup: A mouse button is released over an element.
+    • mousemove: The pointer is moved while over an element.
+    • mouseover: The pointer is moved onto an element or one of its descendants.
+    • mouseout: The pointer is moved out of an element or one of its descendants.
+    • mouseenter: The pointer is moved onto an element (does not bubble).
+    • mouseleave: The pointer is moved out of an element (does not bubble).
+    • contextmenu: The right mouse button is clicked (usually opens a context menu).
+      W3Schools+4
+
+Keyboard Events
+
+These events respond to user interactions with the keyboard.
+
+    • keydown: A key is pressed down.
+    • keyup: A key is released.
+    • keypress: A character key is pressed (now largely deprecated in favor ofkeydownandkeyupfor most uses).
+
+Form Events
+
+These events occur during form interaction or element focus.
+
+    • submit: A form is submitted.
+    • change: The value of an input element (like<select>,<input type="checkbox">, or<input type="radio">) is changed.
+    • input: The value of an input element or<textarea>is changed (fires immediately on modification).
+    • focus: An element receives focus.
+    • blur: An element loses focus.
+
+Window and Document Events
+
+These events relate to the overall browser window or document lifecycle.
+
+    • load: The window or a resource (like an image) has finished loading.
+    • unload: The window or document is being unloaded.
+    • resize: The browser window is resized.
+    • scroll: The document view or an element is scrolled.
+    • DOMContentLoaded: The initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+
+Touch Events (for mobile devices)
+
+These events handle interactions on touch screens.
+
+    • touchstart: A touch point is placed on the touch surface.
+    • touchmove: A touch point is moved along the touch surface.
+    • touchend: A touch point is removed from the touch surface.
