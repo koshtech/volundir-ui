@@ -1,0 +1,13 @@
+{
+  "application_name": "Volundir SPA Demo",
+  "startUpInitLevel": "appReady",
+  "logger": {
+    "core": "debugger",
+    "controllers": "debugger",
+    "models": "debugger",
+    "views": "debugger",
+    "integrations": "debugger",
+    "interface": "debugger",
+    "storage": "debugger"
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "NAME": "Volundir Base System",
-  "DESCRIPTION": "A Developer Panel in an Embedded Mini Aplication",
-  "DEPENCENCIES": [],
-  "PROVIDE": [],
-  "OBJECTTYPE": "base",
-  "VERSION": "0.2.0-c55"
-}
