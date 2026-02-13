@@ -1,6 +1,5 @@
 {
   "application_name": "Volundir SPA Demo",
-  "storage": "json",
   "auto_load_models": ["user", "sessions"],
   "interface": {
     "adapter": "volundir",

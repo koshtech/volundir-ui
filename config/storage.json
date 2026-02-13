@@ -1,5 +1,14 @@
 {
   "default": "my_json_api",
+  "my_local_storage": {
+    "type": "local_storage",
+    "url": "http://127.0.0.1:3020/",
+    "headers": {
+      "content-type": "application/json",
+      "accept": "application/json",
+      "authorization": "Bearer <token_jwt>"
+    }
+  },
   "my_json_api": {
     "type": "json",
     "url": "http://127.0.0.1:3020/api/fake",

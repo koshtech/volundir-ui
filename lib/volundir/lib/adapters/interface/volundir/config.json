@@ -1,4 +1,14 @@
 {
-  "name": "volundir-ui",
-  "code": "vld"
+  "name":    "volundir-ui",
+  "adapter": "volundir",
+  "code":    "vld",
+  "path":    "lib/volundir/lib/adapters/interface/volundir/",
+  "ui":      "assets/css/volundir-ui.css",
+  "style":   "layouts/layout.css",
+  "layout":  "layouts/application.html",
+  "layouts": {
+    "main": "layouts/application.html",
+    "phone": "layouts/phone.html",
+    "tablet": "layouts/tablet.html"
+  }
 }

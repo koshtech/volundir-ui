@@ -1,4 +1,13 @@
 {
   "name": "bootstrap-5.3.0",
-  "code": "bt-530"
+  "adapter": "volundir-5.3.0",
+  "code": "bt-530",
+  "path":    "lib/volundir/lib/adapters/interface/volundir-5.3.0/",
+  "ui":      "assets/css/bootstrap.min.css",
+  "style":   "layouts/layout.css",
+  "layouts": {
+    "main": "layouts/application.html",
+    "phone": "layouts/phone.html",
+    "tablet": "layouts/tablet.html"
+  }
 }

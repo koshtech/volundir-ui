@@ -1,4 +1,19 @@
 export class SessionsController extends ApplicationController {
+  constructor () {
+    super();
+
+    this.data = {};
+    this.requiredModels = ['user']
+
+    this.modules = {
+      display: new DisplayModule()
+    }
+
+    this.models = {
+      user: new User()
+    }
+  }
+
   login() {
     sessionStorage.setItem('auth', true);
     console.log(" [SessionsController][login]", this);
